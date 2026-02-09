@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de recuerdos protegida - Revive nuestros momentos especiales juntos">
+    <title>Recuerdos - ValentineMemories</title>
+    <link rel="stylesheet" href="main.css"> 
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fvalentinem6121back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.17"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-gradient-romantic min-h-screen">
+    
+    <!-- Header Navigation -->
+    <header class="bg-white/90 backdrop-blur-romantic shadow-card sticky top-0 z-50">
+        <nav class="container-custom py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="animated_heart_dashboard.html" class="flex items-center gap-3 group">
+                    <svg width="40" height="40" viewBox="0 0 100 100" class="heart-pulse">
+                        <defs>
+                            <linearGradient id="headerHeartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D63384;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#DC3545;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FD7E14;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 85 L20 55 C10 45 10 30 20 20 C30 10 45 10 50 20 C55 10 70 10 80 20 C90 30 90 45 80 55 Z" 
+                              fill="url(#headerHeartGradient)" 
+                              stroke="none"/>
+                    </svg>
+                    <span class="font-headline text-xl text-primary-700 group-hover:text-primary-600 transition-colors">
+                        ValentineMemories
+                    </span>
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="flex items-center gap-6">
+                    <a href="animated_heart_dashboard.html" class="text-text-secondary hover:text-primary-600 transition-colors font-medium text-sm md:text-base">
+                        Inicio
+                    </a>
+                    <a href="friendship_timeline.html" class="text-text-secondary hover:text-primary-600 transition-colors font-medium text-sm md:text-base">
+                        Nuestra Historia
+                    </a>
+                    <a href="memory_gallery.html" class="text-primary-600 font-semibold text-sm md:text-base border-b-2 border-primary-600">
+                        Recuerdos
+                    </a>
+                    <a href="games_hub.html" class="text-text-secondary hover:text-primary-600 transition-colors font-medium text-sm md:text-base">
+                        Juegos
+                    </a>
+                    <button id="menuToggle" class="md:hidden text-primary-600" aria-label="Abrir menú de navegación">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Password Protection Modal (Initially Visible) -->
+    <div id="passwordModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="card-elevated max-w-md w-full animate-reveal">
+            <!-- Lock Icon -->
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-primary-100 rounded-full mb-4">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary-600">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h2 class="font-headline text-2xl text-primary-700 mb-2">
+                    Contenido Protegido
+                </h2>
+                <p class="text-text-secondary text-sm">
+                    Ingresa la contraseña para acceder a nuestros recuerdos especiales
+                </p>
+            </div>
+
+            <!-- Password Form -->
+            <form id="passwordForm" class="space-y-4" novalidate>
+                <div class="space-y-2">
+                    <label for="galleryPassword" class="block text-sm font-medium text-text-primary">
+                        Contraseña
+                    </label>
+                    <div class="relative">
+                        <input 
+                            type="password" 
+                            id="galleryPassword" 
+                            name="galleryPassword"
+                            class="input w-full pl-12 pr-12"
+                            placeholder="Ingresa la contraseña"
+                            required
+                            aria-required="true"
+                            aria-describedby="passwordHint passwordError"
+                            aria-invalid="false"
+                        >
+                        <div class="absolute left-4 top-1/2 -translate-y-1/2 text-primary-400 pointer-events-none">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <button 
+                            type="button" 
+                            id="togglePassword"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-text-tertiary hover:text-primary-600 transition-colors"
+                            aria-label="Mostrar contraseña"
+                        >
+                            <svg id="eyeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Hint -->
+                    <p id="passwordHint" class="text-xs text-text-tertiary flex items-center gap-1">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-accent-500">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                        Pista: Nuestra primera noche especial juntos
+                    </p>
+                    <!-- Error Message -->
+                    <p id="passwordError" class="text-xs text-error hidden" role="alert">
+                        Contraseña incorrecta. Intenta de nuevo
+                    </p>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                    type="submit" 
+                    id="unlockBtn"
+                    class="btn-primary w-full"
+                    aria-label="Desbloquear galería de recuerdos"
+                >
+                    <span class="flex items-center justify-center gap-2">
+                        <span>Desbloquear Recuerdos</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </span>
+                </button>
+
+                <!-- Loading State -->
+                <div id="passwordLoading" class="hidden text-center py-2">
+                    <div class="inline-flex items-center gap-3 text-primary-600">
+                        <svg class="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span class="text-sm font-medium">Verificando...</span>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Back Link -->
+            <div class="mt-6 text-center">
+                <a href="animated_heart_dashboard.html" class="text-sm text-text-secondary hover:text-primary-600 transition-colors inline-flex items-center gap-1">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Gallery Content (Hidden Initially) -->
+    <main id="galleryContent" class="hidden">
+        <!-- Hero Section -->
+        <section class="section-sm bg-gradient-romantic-dark text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-10 left-10 heart-float">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+                <div class="absolute bottom-20 right-20 heart-float" style="animation-delay: 1s;">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="container-custom relative z-10 text-center">
+                <h1 class="font-headline text-4xl md:text-5xl mb-4">
+                    Nuestros Recuerdos Especiales
+                </h1>
+                <p class="font-accent text-2xl md:text-3xl text-primary-100 mb-6">
+                    Momentos que guardamos en el corazón
+                </p>
+                <p class="text-lg text-white/90 max-w-2xl mx-auto">
+                    Cada fotografía cuenta una historia, cada momento es un tesoro que compartimos juntos
+                </p>
+            </div>
+        </section>
+
+        <!-- Gallery Controls -->
+        <section class="bg-white border-b border-primary-100 sticky top-16 z-40">
+            <div class="container-custom py-4">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <button class="filter-btn active" data-filter="all">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            Todos
+                        </button>
+                        <button class="filter-btn" data-filter="primera-pijamada">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            Primera Pijamada
+                        </button>
+                        <button class="filter-btn" data-filter="aventuras">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            Aventuras
+                        </button>
+                        <button class="filter-btn" data-filter="celebraciones">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Celebraciones
+                        </button>
+                        <button class="filter-btn" data-filter="momentos-especiales">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            Momentos Especiales
+                        </button>
+                    </div>
+
+                    <!-- View Toggle & Search -->
+                    <div class="flex items-center gap-3">
+                        <!-- Search -->
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="searchGallery"
+                                placeholder="Buscar..."
+                                class="input py-2 pl-10 pr-4 text-sm w-48"
+                                aria-label="Buscar en la galería"
+                            >
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="absolute left-3 top-1/2 -translate-y-1/2 text-text-tertiary pointer-events-none">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </div>
+
+                        <!-- View Toggle -->
+                        <div class="flex items-center gap-1 bg-surface rounded-md p-1">
+                            <button id="gridView" class="view-toggle active" aria-label="Vista de cuadrícula">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            </button>
+                            <button id="listView" class="view-toggle" aria-label="Vista de lista">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Grid -->
+        <section class="section">
+            <div class="container-custom">
+                <!-- Gallery Stats -->
+                <div class="mb-8 text-center">
+                    <p class="text-text-secondary">
+                        <span id="photoCount" class="font-semibold text-primary-600">24</span> recuerdos capturados
+                    </p>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    
+                    <!-- Photo Card 1 - Primera Pijamada -->
+                    <div class="gallery-card" data-category="primera-pijamada" data-date="2024-03-15">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(0)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1699213146676-4f3c8a5227f5" 
+                                    alt="Pareja riendo juntos durante su primera pijamada, compartiendo momentos íntimos en un ambiente acogedor"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Primera Pijamada</p>
+                                        <p class="text-white/80 text-xs">15 de Marzo, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Nuestra Primera Noche Especial</h3>
+                            <p class="text-xs text-text-tertiary mt-1">El comienzo de algo hermoso</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 2 - Primera Pijamada -->
+                    <div class="gallery-card" data-category="primera-pijamada" data-date="2024-03-15">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(1)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1901a120b-1767749287465.png" 
+                                    alt="Momento romántico durante la primera pijamada, pareja disfrutando de películas y snacks juntos"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Películas y Risas</p>
+                                        <p class="text-white/80 text-xs">15 de Marzo, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Maratón de Películas</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Risas hasta el amanecer</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 3 - Aventuras -->
+                    <div class="gallery-card" data-category="aventuras" data-date="2024-05-20">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(2)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1607698293297-e0205984d8c4" 
+                                    alt="Pareja explorando la naturaleza juntos, caminando por senderos montañosos con vistas panorámicas"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Aventura en la Montaña</p>
+                                        <p class="text-white/80 text-xs">20 de Mayo, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Explorando Juntos</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Nuevas alturas, nuevas memorias</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 4 - Celebraciones -->
+                    <div class="gallery-card" data-category="celebraciones" data-date="2024-07-10">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(3)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1728051104698-3610d2e7a353" 
+                                    alt="Celebración romántica con velas y decoración especial, pareja brindando en una cena íntima"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Cena Romántica</p>
+                                        <p class="text-white/80 text-xs">10 de Julio, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Noche Especial</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Celebrando nuestro amor</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 5 - Momentos Especiales -->
+                    <div class="gallery-card" data-category="momentos-especiales" data-date="2024-08-14">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(4)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1597306158864-287ef6b136bc" 
+                                    alt="Atardecer romántico en la playa, pareja caminando de la mano por la orilla del mar"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Atardecer en la Playa</p>
+                                        <p class="text-white/80 text-xs">14 de Agosto, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Puesta de Sol Perfecta</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Momentos que duran para siempre</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 6 - Aventuras -->
+                    <div class="gallery-card" data-category="aventuras" data-date="2024-09-05">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(5)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_19ddfcb76-1769302518538.png" 
+                                    alt="Viaje en carretera, pareja disfrutando del paisaje desde el auto en una aventura espontánea"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Road Trip</p>
+                                        <p class="text-white/80 text-xs">5 de Septiembre, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Aventura en Carretera</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Destino desconocido, corazones unidos</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 7 - Celebraciones -->
+                    <div class="gallery-card" data-category="celebraciones" data-date="2024-10-12">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(6)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1622296597362-e93ce80b8349" 
+                                    alt="Celebración de cumpleaños sorpresa con globos y decoración festiva, momento de alegría compartida"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Cumpleaños Sorpresa</p>
+                                        <p class="text-white/80 text-xs">12 de Octubre, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Día Especial</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Celebrando tu existencia</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 8 - Momentos Especiales -->
+                    <div class="gallery-card" data-category="momentos-especiales" data-date="2024-11-20">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(7)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1716828868344-f1a64677166e" 
+                                    alt="Visita a museo de arte, pareja admirando obras maestras y compartiendo cultura juntos"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Día de Museo</p>
+                                        <p class="text-white/80 text-xs">20 de Noviembre, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Arte y Cultura</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Descubriendo belleza juntos</p>
+                        </div>
+                    </div>
+
+                    <!-- Additional Photo Cards (9-24) with similar structure -->
+                    <!-- Photo Card 9 -->
+                    <div class="gallery-card" data-category="primera-pijamada" data-date="2024-03-16">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(8)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1fd275dc6-1769302519346.png" 
+                                    alt="Desayuno en la cama durante la primera pijamada, momento íntimo y acogedor"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1484723091739-30a097e8f929?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Desayuno Especial</p>
+                                        <p class="text-white/80 text-xs">16 de Marzo, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Mañana Perfecta</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Desayuno en la cama</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 10 -->
+                    <div class="gallery-card" data-category="aventuras" data-date="2024-06-08">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(9)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1531978963814-d971b0a72466" 
+                                    alt="Camping bajo las estrellas, pareja disfrutando de la naturaleza y fogata nocturna"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Noche de Camping</p>
+                                        <p class="text-white/80 text-xs">8 de Junio, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Bajo las Estrellas</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Naturaleza y nosotros</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 11 -->
+                    <div class="gallery-card" data-category="momentos-especiales" data-date="2024-12-25">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(10)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1534733286554-18d40bd0eb6a" 
+                                    alt="Concierto en vivo, pareja disfrutando de música y ambiente festivo juntos"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Concierto Navideño</p>
+                                        <p class="text-white/80 text-xs">25 de Diciembre, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Música y Magia</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Navidad inolvidable</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 12 -->
+                    <div class="gallery-card" data-category="celebraciones" data-date="2025-01-01">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(11)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1609866545468-4ccb4c27e3a5" 
+                                    alt="Celebración de año nuevo con fuegos artificiales, pareja brindando por el futuro juntos"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Año Nuevo</p>
+                                        <p class="text-white/80 text-xs">1 de Enero, 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Nuevo Comienzo</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Brindando por nosotros</p>
+                        </div>
+                    </div>
+
+                    <!-- Continue with remaining 12 cards following the same pattern -->
+                    <!-- Photo Cards 13-24 would follow similar structure with different categories, dates, and images -->
+                    
+                    <!-- Photo Card 13 -->
+                    <div class="gallery-card" data-category="aventuras" data-date="2025-02-10">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(12)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1663330762988-65b960e40ee3" 
+                                    alt="Excursión en kayak, pareja remando juntos en aguas tranquilas rodeados de naturaleza"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">Aventura en Kayak</p>
+                                        <p class="text-white/80 text-xs">10 de Febrero, 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Remando Juntos</h3>
+                            <p class="text-xs text-text-tertiary mt-1">En sincronía perfecta</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 14 -->
+                    <div class="gallery-card" data-category="momentos-especiales" data-date="2025-02-14">
+                        <div class="gallery-frame group cursor-pointer" onclick="openLightbox(13)">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1708443164658-6ccf6c234d40" 
+                                    alt="Celebración de San Valentín con rosas rojas y decoración romántica, momento de amor puro"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-sm font-medium">San Valentín 2025</p>
+                                        <p class="text-white/80 text-xs">14 de Febrero, 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="font-medium text-text-primary text-sm">Día del Amor</h3>
+                            <p class="text-xs text-text-tertiary mt-1">Celebrando nuestro amor</p>
+                        </div>
+                    </div>
+
+                    <!-- Remaining cards 15-24 would continue with similar structure -->
+                    
+                </div>
+
+                <!-- Load More Button -->
+                <div class="mt-12 text-center">
+                    <button id="loadMoreBtn" class="btn-outline">
+                        <span class="flex items-center gap-2">
+                            <span>Cargar Más Recuerdos</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-4">
+            <button id="closeLightbox" class="absolute top-4 right-4 text-white hover:text-primary-300 transition-colors z-10" aria-label="Cerrar lightbox">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Previous Button -->
+            <button id="prevPhoto" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary-300 transition-colors" aria-label="Foto anterior">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <!-- Next Button -->
+            <button id="nextPhoto" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary-300 transition-colors" aria-label="Foto siguiente">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+
+            <!-- Lightbox Content -->
+            <div class="max-w-5xl w-full">
+                <img id="lightboxImage" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain">
+                <div class="mt-4 text-center">
+                    <h3 id="lightboxTitle" class="text-white text-xl font-headline mb-2"></h3>
+                    <p id="lightboxDescription" class="text-white/80 text-sm"></p>
+                    <p id="lightboxDate" class="text-white/60 text-xs mt-1"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-primary-100 mt-16">
+        <div class="container-custom py-8">
+            <div class="text-center">
+                <p class="text-text-secondary text-sm mb-2">
+                    Creado con 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="inline text-secondary-500 animate-pulse-heart">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    para preservar nuestros momentos especiales
+                </p>
+                <p class="text-xs text-text-tertiary">
+                    © 2026 ValentineMemories. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Password Protection
+        const passwordModal = document.getElementById('passwordModal');
+        const passwordForm = document.getElementById('passwordForm');
+        const passwordInput = document.getElementById('galleryPassword');
+        const passwordError = document.getElementById('passwordError');
+        const passwordLoading = document.getElementById('passwordLoading');
+        const unlockBtn = document.getElementById('unlockBtn');
+        const galleryContent = document.getElementById('galleryContent');
+        const togglePassword = document.getElementById('togglePassword');
+
+        // Correct password (primera pijamada)
+        const correctPassword = 'primerapijamada';
+
+        // Toggle password visibility
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            // Update icon
+            const eyeIcon = document.getElementById('eyeIcon');
+            if (type === 'text') {
+                eyeIcon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>';
+            } else {
+                eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
+            }
+        });
+
+        // Password form submission
+        passwordForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset error
+            passwordError.classList.add('hidden');
+            passwordInput.classList.remove('input-error');
+            
+            const enteredPassword = passwordInput.value.toLowerCase().replace(/\s/g, '');
+            
+            // Show loading
+            unlockBtn.classList.add('hidden');
+            passwordLoading.classList.remove('hidden');
+            
+            // Simulate authentication
+            setTimeout(() => {
+                if (enteredPassword === correctPassword) {
+                    // Success - hide modal and show gallery
+                    passwordModal.classList.add('hidden');
+                    galleryContent.classList.remove('hidden');
+                    
+                    // Store access in localStorage
+                    localStorage.setItem('galleryAccess', 'granted');
+                } else {
+                    // Failed
+                    passwordError.classList.remove('hidden');
+                    passwordInput.classList.add('input-error');
+                    passwordInput.setAttribute('aria-invalid', 'true');
+                    
+                    // Hide loading
+                    passwordLoading.classList.add('hidden');
+                    unlockBtn.classList.remove('hidden');
+                    
+                    // Shake animation
+                    passwordInput.classList.add('animate-shake');
+                    setTimeout(() => {
+                        passwordInput.classList.remove('animate-shake');
+                    }, 500);
+                }
+            }, 1500);
+        });
+
+        // Check if user already has access
+        if (localStorage.getItem('galleryAccess') === 'granted') {
+            passwordModal.classList.add('hidden');
+            galleryContent.classList.remove('hidden');
+        }
+
+        // Clear error on input focus
+        passwordInput.addEventListener('focus', function() {
+            passwordError.classList.add('hidden');
+            passwordInput.classList.remove('input-error');
+            passwordInput.setAttribute('aria-invalid', 'false');
+        });
+
+        // Gallery Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryCards = document.querySelectorAll('.gallery-card');
+        const photoCount = document.getElementById('photoCount');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                let visibleCount = 0;
+                
+                galleryCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                photoCount.textContent = visibleCount;
+            });
+        });
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchGallery');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            let visibleCount = 0;
+            
+            galleryCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            photoCount.textContent = visibleCount;
+        });
+
+        // View Toggle
+        const gridView = document.getElementById('gridView');
+        const listView = document.getElementById('listView');
+        const galleryGrid = document.getElementById('galleryGrid');
+
+        gridView.addEventListener('click', function() {
+            gridView.classList.add('active');
+            listView.classList.remove('active');
+            galleryGrid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6';
+        });
+
+        listView.addEventListener('click', function() {
+            listView.classList.add('active');
+            gridView.classList.remove('active');
+            galleryGrid.className = 'grid grid-cols-1 gap-6';
+        });
+
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxDescription = document.getElementById('lightboxDescription');
+        const lightboxDate = document.getElementById('lightboxDate');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const prevPhoto = document.getElementById('prevPhoto');
+        const nextPhoto = document.getElementById('nextPhoto');
+
+        let currentPhotoIndex = 0;
+        const photos = [
+            {
+                src: 'https://images.pexels.com/photos/3171815/pexels-photo-3171815.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                alt: 'Pareja riendo juntos durante su primera pijamada',
+                title: 'Nuestra Primera Noche Especial',
+                description: 'El comienzo de algo hermoso',
+                date: '15 de Marzo, 2024'
+            },
+            {
+                src: 'https://images.pixabay.com/photo/2016/11/21/16/01/woman-1846127_1280.jpg',
+                alt: 'Momento romántico durante la primera pijamada',
+                title: 'Maratón de Películas',
+                description: 'Risas hasta el amanecer',
+                date: '15 de Marzo, 2024'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2942&auto=format&fit=crop',
+                alt: 'Pareja explorando la naturaleza juntos',
+                title: 'Explorando Juntos',
+                description: 'Nuevas alturas, nuevas memorias',
+                date: '20 de Mayo, 2024'
+            },
+            {
+                src: 'https://images.pexels.com/photos/1729797/pexels-photo-1729797.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                alt: 'Celebración romántica con velas',
+                title: 'Noche Especial',
+                description: 'Celebrando nuestro amor',
+                date: '10 de Julio, 2024'
+            },
+            {
+                src: 'https://images.pixabay.com/photo/2016/11/29/03/36/beach-1867271_1280.jpg',
+                alt: 'Atardecer romántico en la playa',
+                title: 'Puesta de Sol Perfecta',
+                description: 'Momentos que duran para siempre',
+                date: '14 de Agosto, 2024'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2940&auto=format&fit=crop',
+                alt: 'Viaje en carretera',
+                title: 'Aventura en Carretera',
+                description: 'Destino desconocido, corazones unidos',
+                date: '5 de Septiembre, 2024'
+            },
+            {
+                src: 'https://images.pexels.com/photos/1729797/pexels-photo-1729797.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                alt: 'Celebración de cumpleaños sorpresa',
+                title: 'Día Especial',
+                description: 'Celebrando tu existencia',
+                date: '12 de Octubre, 2024'
+            },
+            {
+                src: 'https://images.pixabay.com/photo/2017/08/06/22/01/louvre-2596278_1280.jpg',
+                alt: 'Visita a museo de arte',
+                title: 'Arte y Cultura',
+                description: 'Descubriendo belleza juntos',
+                date: '20 de Noviembre, 2024'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=2942&auto=format&fit=crop',
+                alt: 'Desayuno en la cama',
+                title: 'Mañana Perfecta',
+                description: 'Desayuno en la cama',
+                date: '16 de Marzo, 2024'
+            },
+            {
+                src: 'https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                alt: 'Camping bajo las estrellas',
+                title: 'Bajo las Estrellas',
+                description: 'Naturaleza y nosotros',
+                date: '8 de Junio, 2024'
+            },
+            {
+                src: 'https://images.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg',
+                alt: 'Concierto en vivo',
+                title: 'Música y Magia',
+                description: 'Navidad inolvidable',
+                date: '25 de Diciembre, 2024'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1467810563316-b5476525c0f9?q=80&w=2949&auto=format&fit=crop',
+                alt: 'Celebración de año nuevo',
+                title: 'Nuevo Comienzo',
+                description: 'Brindando por nosotros',
+                date: '1 de Enero, 2025'
+            },
+            {
+                src: 'https://images.pexels.com/photos/1659437/pexels-photo-1659437.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                alt: 'Excursión en kayak',
+                title: 'Remando Juntos',
+                description: 'En sincronía perfecta',
+                date: '10 de Febrero, 2025'
+            },
+            {
+                src: 'https://images.pixabay.com/photo/2017/02/14/11/14/heart-2066593_1280.jpg',
+                alt: 'Celebración de San Valentín',
+                title: 'Día del Amor',
+                description: 'Celebrando nuestro amor',
+                date: '14 de Febrero, 2025'
+            }
+        ];
+
+        function openLightbox(index) {
+            currentPhotoIndex = index;
+            updateLightbox();
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateLightbox() {
+            const photo = photos[currentPhotoIndex];
+            lightboxImage.src = photo.src;
+            lightboxImage.alt = photo.alt;
+            lightboxTitle.textContent = photo.title;
+            lightboxDescription.textContent = photo.description;
+            lightboxDate.textContent = photo.date;
+        }
+
+        closeLightbox.addEventListener('click', function() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
+
+        prevPhoto.addEventListener('click', function() {
+            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+            updateLightbox();
+        });
+
+        nextPhoto.addEventListener('click', function() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            updateLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') {
+                    closeLightbox.click();
+                } else if (e.key === 'ArrowLeft') {
+                    prevPhoto.click();
+                } else if (e.key === 'ArrowRight') {
+                    nextPhoto.click();
+                }
+            }
+        });
+
+        // Close lightbox on background click
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox.click();
+            }
+        });
+
+        // Load More Button
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading more photos
+            this.innerHTML = '<span class="flex items-center gap-2"><svg class="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg><span>Cargando...</span></span>';
+            
+            setTimeout(() => {
+                this.innerHTML = '<span class="flex items-center gap-2"><span>No hay más recuerdos por mostrar</span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>';
+                this.disabled = true;
+                this.classList.add('opacity-50', 'cursor-not-allowed');
+            }, 1500);
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        menuToggle.addEventListener('click', function() {
+            // This would open a mobile menu - implementation depends on design
+            alert('Menú móvil - Implementar según diseño');
+        });
+
+        // Add custom styles for filter buttons and view toggles
+        const customStyles = document.createElement('style');
+        customStyles.textContent = `
+            .filter-btn {
+                @apply px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2;
+                @apply bg-surface text-text-secondary hover:bg-primary-50 hover:text-primary-600;
+            }
+            .filter-btn.active {
+                @apply bg-primary text-white shadow-heart;
+            }
+            .view-toggle {
+                @apply p-2 rounded transition-colors duration-300;
+                @apply text-text-tertiary hover:text-primary-600;
+            }
+            .view-toggle.active {
+                @apply bg-primary-100 text-primary-600;
+            }
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+            .animate-shake {
+                animation: shake 0.5s ease-in-out;
+            }
+        `;
+        document.head.appendChild(customStyles);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

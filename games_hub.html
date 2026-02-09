@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro de juegos interactivos románticos - ValentineMemories">
+    <title>Centro de Juegos - ValentineMemories</title>
+    <link rel="stylesheet" href="main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fvalentinem6121back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.15"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-gradient-romantic min-h-screen">
+    
+    <!-- Animated Background Hearts -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div class="heart-float absolute top-10 left-10 text-primary-200 opacity-20">
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute top-32 right-20 text-secondary-200 opacity-15" style="animation-delay: 1s;">
+            <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute bottom-20 left-1/4 text-accent-200 opacity-18" style="animation-delay: 2s;">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute top-1/2 right-10 text-primary-300 opacity-22" style="animation-delay: 0.5s;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="relative z-20 bg-surface/80 backdrop-blur-romantic shadow-card">
+        <nav class="container-custom py-4" aria-label="Navegación principal">
+            <div class="flex items-center justify-between">
+                <!-- Logo/Brand -->
+                <a href="animated_heart_dashboard.html" class="flex items-center gap-3 group" aria-label="Volver al inicio">
+                    <svg width="40" height="40" viewBox="0 0 100 100" class="heart-pulse">
+                        <defs>
+                            <linearGradient id="headerHeartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D63384;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#DC3545;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FD7E14;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 85 L20 55 C10 45 10 30 20 20 C30 10 45 10 50 20 C55 10 70 10 80 20 C90 30 90 45 80 55 Z" 
+                              fill="url(#headerHeartGradient)"/>
+                    </svg>
+                    <span class="font-headline text-xl text-primary-700 group-hover:text-primary-600 transition-colors">
+                        ValentineMemories
+                    </span>
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="flex items-center gap-4">
+                    <a href="animated_heart_dashboard.html" 
+                       class="text-text-secondary hover:text-primary-600 transition-colors font-medium text-sm md:text-base"
+                       aria-label="Ir al tablero principal">
+                        Inicio
+                    </a>
+                    <a href="navigation_menu.html" 
+                       class="text-text-secondary hover:text-primary-600 transition-colors font-medium text-sm md:text-base"
+                       aria-label="Ver menú de navegación">
+                        Menú
+                    </a>
+                    <a href="memory_gallery.html" 
+                       class="text-text-secondary hover:text-primary-600 transition-colors font-medium text-sm md:text-base"
+                       aria-label="Ver galería de recuerdos">
+                        Recuerdos    
+                    </a>
+                           </a>
+                    <a href="friendship_timeline.html" 
+                       class="text-text-secondary hover:text-primary-600 transition-colors font-medium text-sm md:text-base"
+                       aria-label="Ver linea de tiempo">
+                        Linea de tiempo    
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 container-custom py-12 md:py-16">
+        
+        <!-- Page Header -->
+        <section class="text-center mb-12" id="games-header">
+            <div class="inline-flex items-center justify-center mb-4">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary-600">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    <circle cx="9" cy="12" r="1"></circle>
+                    <circle cx="15" cy="12" r="1"></circle>
+                </svg>
+            </div>
+            <h1 class="font-headline text-4xl md:text-5xl text-primary-700 mb-4">
+                Centro de Juegos Románticos
+            </h1>
+            <p class="font-accent text-2xl text-secondary-600 mb-3">
+                Crea Nuevos Recuerdos Jugando Juntos
+            </p>
+            <p class="text-text-secondary max-w-2xl mx-auto">
+                Disfruta de juegos interactivos diseñados especialmente para celebrar nuestro amor
+            </p>
+        </section>
+
+        <!-- Achievement Summary Bar -->
+        <section class="mb-12" id="achievement-summary" aria-label="Resumen de logros">
+            <div class="card-elevated max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Total Games Played -->
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-3">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-primary-600">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <p class="text-3xl font-bold text-primary-700 mb-1" id="totalGamesPlayed">0</p>
+                        <p class="text-sm text-text-secondary">Juegos Completados</p>
+                    </div>
+
+                    <!-- High Score -->
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-3">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-secondary-600">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <p class="text-3xl font-bold text-secondary-700 mb-1" id="highScore">0</p>
+                        <p class="text-sm text-text-secondary">Puntuación Máxima</p>
+                    </div>
+
+                    <!-- Achievements Unlocked -->
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-100 rounded-full mb-3">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-accent-600">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <p class="text-3xl font-bold text-accent-700 mb-1" id="achievementsUnlocked">0</p>
+                        <p class="text-sm text-text-secondary">Logros Desbloqueados</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Grid -->
+        <section id="games-grid" aria-label="Selección de juegos">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                
+                <!-- Game 1: Memory Match -->
+                <article class="card-elevated group hover:shadow-elevated transition-all duration-300 cursor-pointer" 
+                         data-game="memory-match"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Jugar Memoria de Corazones">
+                    <div class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-gradient-to-br from-primary-100 to-primary-200">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ad1fd1a0-1768172678652.png" 
+                             alt="Juego de memoria con cartas de corazones sobre fondo rosa romántico"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy"
+                             onerror="this.src='https://images.unsplash.com/photo-1675552561375-17a696a90923'; this.onerror=null;">
+                        <div class="absolute inset-0 bg-primary-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                        <!-- Difficulty Badge -->
+                        <div class="absolute top-3 right-3 bg-success text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Fácil
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-primary-600">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-headline text-xl text-primary-700 mb-1 group-hover:text-primary-600 transition-colors">
+                                Memoria de Corazones
+                            </h3>
+                            <p class="text-sm text-text-secondary mb-3">
+                                Encuentra las parejas de corazones en este clásico juego de memoria
+                            </p>
+                            <div class="flex items-center gap-4 text-xs text-text-tertiary">
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                    <span id="memoryPlays">0</span> jugadas
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span id="memoryBest">0</span> mejor
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full text-sm">
+                        Jugar Ahora
+                    </button>
+                </article>
+
+                <!-- Game 2: Love Quiz -->
+                <article class="card-elevated group hover:shadow-elevated transition-all duration-300 cursor-pointer" 
+                         data-game="love-quiz"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Jugar Trivia ">
+                    <div class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-gradient-to-br from-secondary-100 to-secondary-200">
+                        <img src="trivia.jpg" 
+                             alt="Pareja sonriente respondiendo preguntas en un ambiente romántico"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy"
+                             onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;">
+                        <div class="absolute inset-0 bg-secondary-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 right-3 bg-warning text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Medio
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-secondary-600">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-headline text-xl text-secondary-700 mb-1 group-hover:text-secondary-600 transition-colors">
+                                Trivia 
+                            </h3>
+                            <p class="text-sm text-text-secondary mb-3">
+                                ¿Qué tanto conoces nuestra historia? Pon a prueba tu memoria
+                            </p>
+                            <div class="flex items-center gap-4 text-xs text-text-tertiary">
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                    <span id="quizPlays">0</span> jugadas
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span id="quizBest">0</span>% mejor
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full text-sm">
+                        Jugar Ahora
+                    </button>
+                </article>
+
+                <!-- Game 3: Heart Catcher -->
+                <article class="card-elevated group hover:shadow-elevated transition-all duration-300 cursor-pointer" 
+                         data-game="heart-catcher"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Jugar Atrapa Corazones">
+                    <div class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-gradient-to-br from-accent-100 to-accent-200">
+                        <img src="atrapa.webp" 
+                             alt="Corazones flotantes cayendo en un ambiente festivo y romántico"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy"
+                             onerror="this.src='https://img.rocket.new/generatedImages/rocket_gen_img_1135e7cab-1769302516913.png'; this.onerror=null;">
+                        <div class="absolute inset-0 bg-accent-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 right-3 bg-error text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Difícil
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-accent-600">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-headline text-xl text-accent-700 mb-1 group-hover:text-accent-600 transition-colors">
+                                Atrapa Corazones
+                            </h3>
+                            <p class="text-sm text-text-secondary mb-3">
+                                Atrapa los corazones que caen antes de que toquen el suelo
+                            </p>
+                            <div class="flex items-center gap-4 text-xs text-text-tertiary">
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                    <span id="catcherPlays">0</span> jugadas
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span id="catcherBest">0</span> mejor
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full text-sm">
+                        Jugar Ahora
+                    </button>
+                </article>
+
+                <!-- Game 4: Love Puzzle -->
+                <article class="card-elevated group hover:shadow-elevated transition-all duration-300 cursor-pointer" 
+                         data-game="love-puzzle"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Jugar Rompecabezas">
+                    <div class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-gradient-to-br from-primary-200 to-secondary-200">
+                        <img src="rompe.jpg" 
+                             alt="Piezas de rompecabezas formando un corazón sobre fondo romántico"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy"
+                             onerror="this.src='https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;">
+                        <div class="absolute inset-0 bg-primary-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 right-3 bg-warning text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Medio
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary-600">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-headline text-xl text-primary-700 mb-1 group-hover:text-primary-600 transition-colors">
+                                Rompecabezas 
+                            </h3>
+                            <p class="text-sm text-text-secondary mb-3">
+                                Arma nuestras fotos favoritas pieza por pieza
+                            </p>
+                            <div class="flex items-center gap-4 text-xs text-text-tertiary">
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                    <span id="puzzlePlays">0</span> jugadas
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span id="puzzleBest">0</span>s mejor
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full text-sm">
+                        Jugar Ahora
+                    </button>
+                </article>
+
+                <!-- Game 5: Word Search -->
+                <article class="card-elevated group hover:shadow-elevated transition-all duration-300 cursor-pointer" 
+                         data-game="word-search"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Jugar Sopa de Letras">
+                    <div class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-gradient-to-br from-secondary-100 to-accent-200">
+                        <img src="sopa.png" 
+                             alt="Letras formando palabras románticas sobre papel vintage"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy"
+                             onerror="this.src='https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;">
+                        <div class="absolute inset-0 bg-secondary-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 right-3 bg-success text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Fácil
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-secondary-600">
+                                <path d="M4 7h16M4 12h16M4 17h16"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-headline text-xl text-secondary-700 mb-1 group-hover:text-secondary-600 transition-colors">
+                                Sopa de Letras 
+                            </h3>
+                            <p class="text-sm text-text-secondary mb-3">
+                                Encuentra palabras especiales escondidas en la sopa de letras
+                            </p>
+                            <div class="flex items-center gap-4 text-xs text-text-tertiary">
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                    <span id="wordPlays">0</span> jugadas
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span id="wordBest">0</span>s mejor
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full text-sm">
+                        Jugar Ahora
+                    </button>
+                </article>
+
+                <!-- Game 6: Tic Tac Love -->
+                <article class="card-elevated group hover:shadow-elevated transition-all duration-300 cursor-pointer" 
+                         data-game="tic-tac-love"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Jugar Tres en Raya ">
+                    <div class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-gradient-to-br from-accent-100 to-primary-200">
+                        <img src="tres.jfif" 
+                             alt="Tablero de tres en raya con corazones y símbolos románticos"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy"
+                             onerror="this.src='https://images.unsplash.com/photo-1611329532992-0b7d0e4d3d8f?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;">
+                        <div class="absolute inset-0 bg-accent-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 right-3 bg-success text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Fácil
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-accent-600">
+                                <line x1="8" y1="3" x2="8" y2="21"></line>
+                                <line x1="16" y1="3" x2="16" y2="21"></line>
+                                <line x1="3" y1="8" x2="21" y2="8"></line>
+                                <line x1="3" y1="16" x2="21" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-headline text-xl text-accent-700 mb-1 group-hover:text-accent-600 transition-colors">
+                                Tres en Raya 
+                            </h3>
+                            <p class="text-sm text-text-secondary mb-3">
+                                Juega al clásico tres en raya con corazones y besos
+                            </p>
+                            <div class="flex items-center gap-4 text-xs text-text-tertiary">
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                    <span id="ticTacPlays">0</span> jugadas
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span id="ticTacWins">0</span> victorias
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full text-sm">
+                        Jugar Ahora
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements-section" class="mb-12" aria-label="Logros desbloqueados">
+            <div class="text-center mb-8">
+                <h2 class="font-headline text-3xl text-primary-700 mb-2">
+                    Logros Desbloqueados
+                </h2>
+                <p class="text-text-secondary">
+                    Colecciona insignias especiales mientras juegas
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Achievement 1 -->
+                <div class="card text-center achievement-locked" data-achievement="first-game">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-gray-200 rounded-full flex items-center justify-center">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-gray-400">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xs font-medium text-text-secondary">Primer Juego</p>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="card text-center achievement-locked" data-achievement="five-games">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-gray-200 rounded-full flex items-center justify-center">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-gray-400">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xs font-medium text-text-secondary">5 Juegos</p>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="card text-center achievement-locked" data-achievement="perfect-score">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-gray-200 rounded-full flex items-center justify-center">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-gray-400">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xs font-medium text-text-secondary">Puntuación Perfecta</p>
+                </div>
+
+                <!-- Achievement 4 -->
+                <div class="card text-center achievement-locked" data-achievement="speed-demon">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-gray-200 rounded-full flex items-center justify-center">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-gray-400">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xs font-medium text-text-secondary">Velocidad Extrema</p>
+                </div>
+
+                <!-- Achievement 5 -->
+                <div class="card text-center achievement-locked" data-achievement="all-games">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-gray-200 rounded-full flex items-center justify-center">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-gray-400">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xs font-medium text-text-secondary">Todos los Juegos</p>
+                </div>
+
+                <!-- Achievement 6 -->
+                <div class="card text-center achievement-locked" data-achievement="champion">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-gray-200 rounded-full flex items-center justify-center">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-gray-400">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xs font-medium text-text-secondary">Campeón del Amor</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Modal (Hidden by default) -->
+        <div id="gameModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="gameModalTitle">
+            <div class="bg-surface rounded-xl shadow-elevated max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <!-- Modal Header -->
+                <div class="sticky top-0 bg-surface border-b border-gray-200 p-6 flex items-center justify-between">
+                    <h2 id="gameModalTitle" class="font-headline text-2xl text-primary-700">Juego</h2>
+                    <button id="closeModal" class="text-text-secondary hover:text-primary-600 transition-colors" aria-label="Cerrar juego">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Modal Content -->
+                <div id="gameContent" class="p-6">
+                    <!-- Game content will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-surface/80 backdrop-blur-romantic border-t border-primary-100 py-8 mt-16">
+        <div class="container-custom text-center">
+            <p class="text-sm text-text-secondary mb-2">
+                Creado con 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="inline text-secondary-500 animate-pulse-heart">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                para alguien especial
+            </p>
+            <p class="text-xs text-text-tertiary">
+                © 2026 ValentineMemories. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Game Statistics Storage
+        const STORAGE_KEY = 'valentineGamesStats';
+
+        // Initialize game statistics
+        function initGameStats() {
+            const stats = localStorage.getItem(STORAGE_KEY);
+            if (!stats) {
+                const defaultStats = {
+                    totalGamesPlayed: 0,
+                    highScore: 0,
+                    achievementsUnlocked: 0,
+                    games: {
+                        memoryMatch: { plays: 0, best: 0 },
+                        loveQuiz: { plays: 0, best: 0 },
+                        heartCatcher: { plays: 0, best: 0 },
+                        lovePuzzle: { plays: 0, best: 0 },
+                        wordSearch: { plays: 0, best: 0 },
+                        ticTacLove: { plays: 0, wins: 0 }
+                    },
+                    achievements: {
+                        firstGame: false,
+                        fiveGames: false,
+                        perfectScore: false,
+                        speedDemon: false,
+                        allGames: false,
+                        champion: false
+                    }
+                };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultStats));
+                return defaultStats;
+            }
+            return JSON.parse(stats);
+        }
+
+        // Update statistics display
+        function updateStatsDisplay() {
+            const stats = initGameStats();
+            
+            // Update summary bar
+            document.getElementById('totalGamesPlayed').textContent = stats.totalGamesPlayed;
+            document.getElementById('highScore').textContent = stats.highScore;
+            document.getElementById('achievementsUnlocked').textContent = stats.achievementsUnlocked;
+
+            // Update individual game stats
+            document.getElementById('memoryPlays').textContent = stats.games.memoryMatch.plays;
+            document.getElementById('memoryBest').textContent = stats.games.memoryMatch.best;
+            document.getElementById('quizPlays').textContent = stats.games.loveQuiz.plays;
+            document.getElementById('quizBest').textContent = stats.games.loveQuiz.best;
+            document.getElementById('catcherPlays').textContent = stats.games.heartCatcher.plays;
+            document.getElementById('catcherBest').textContent = stats.games.heartCatcher.best;
+            document.getElementById('puzzlePlays').textContent = stats.games.lovePuzzle.plays;
+            document.getElementById('puzzleBest').textContent = stats.games.lovePuzzle.best;
+            document.getElementById('wordPlays').textContent = stats.games.wordSearch.plays;
+            document.getElementById('wordBest').textContent = stats.games.wordSearch.best;
+            document.getElementById('ticTacPlays').textContent = stats.games.ticTacLove.plays;
+            document.getElementById('ticTacWins').textContent = stats.games.ticTacLove.wins;
+
+            // Update achievements display
+            updateAchievementsDisplay(stats.achievements);
+        }
+
+        // Update achievements display
+        function updateAchievementsDisplay(achievements) {
+            Object.keys(achievements).forEach(key => {
+                const achievementEl = document.querySelector(`[data-achievement="${key}"]`);
+                if (achievementEl && achievements[key]) {
+                    achievementEl.classList.remove('achievement-locked');
+                    achievementEl.classList.add('achievement-unlocked');
+                    const icon = achievementEl.querySelector('svg');
+                    icon.classList.remove('text-gray-400');
+                    icon.classList.add('text-accent-600');
+                    const bg = achievementEl.querySelector('.bg-gray-200');
+                    bg.classList.remove('bg-gray-200');
+                    bg.classList.add('bg-accent-100');
+                }
+            });
+        }
+
+        // Game Modal Management
+        const gameModal = document.getElementById('gameModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const gameContent = document.getElementById('gameContent');
+        const gameModalTitle = document.getElementById('gameModalTitle');
+
+        // Game card click handlers
+        document.querySelectorAll('[data-game]').forEach(card => {
+            card.addEventListener('click', function() {
+                const gameName = this.dataset.game;
+                openGameModal(gameName);
+            });
+
+            // Keyboard accessibility
+            card.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const gameName = this.dataset.game;
+                    openGameModal(gameName);
+                }
+            });
+        });
+
+        // Close modal handlers
+        closeModalBtn.addEventListener('click', closeGameModal);
+        gameModal.addEventListener('click', function(e) {
+            if (e.target === gameModal) {
+                closeGameModal();
+            }
+        });
+
+        // Escape key to close modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !gameModal.classList.contains('hidden')) {
+                closeGameModal();
+            }
+        });
+
+        // Open game modal
+        function openGameModal(gameName) {
+            const gameConfigs = {
+                'memory-match': {
+                    title: 'Memoria de Corazones',
+                    content: createMemoryMatchGame()
+                },
+                'love-quiz': {
+                    title: 'Trivia del Amor',
+                    content: createLoveQuizGame()
+                },
+                'heart-catcher': {
+                    title: 'Atrapa Corazones',
+                    content: createHeartCatcherGame()
+                },
+                'love-puzzle': {
+                    title: 'Rompecabezas Romántico',
+                    content: createLovePuzzleGame()
+                },
+                'word-search': {
+                    title: 'Sopa de Letras del Amor',
+                    content: createWordSearchGame()
+                },
+                'tic-tac-love': {
+                    title: 'Tres en Raya Romántico',
+                    content: createTicTacLoveGame()
+                }
+            };
+
+            const config = gameConfigs[gameName];
+            if (config) {
+                gameModalTitle.textContent = config.title;
+                gameContent.innerHTML = config.content;
+                gameModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                
+                // Initialize game logic
+                initializeGameLogic(gameName);
+            }
+        }
+
+        // Close game modal
+        function closeGameModal() {
+            gameModal.classList.add('hidden');
+            document.body.style.overflow = '';
+            gameContent.innerHTML = '';
+        }
+
+        // Game Creation Functions
+        function createMemoryMatchGame() {
+            return `
+                <div class="text-center mb-6">
+                    <p class="text-text-secondary mb-4">Encuentra las parejas de corazones haciendo clic en las cartas</p>
+                    <div class="flex justify-center gap-6 mb-4">
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-primary-700" id="memoryMoves">0</p>
+                            <p class="text-xs text-text-secondary">Movimientos</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-secondary-700" id="memoryPairs">0/8</p>
+                            <p class="text-xs text-text-secondary">Parejas</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-accent-700" id="memoryTimer">00:00</p>
+                            <p class="text-xs text-text-secondary">Tiempo</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="memoryGrid" class="grid grid-cols-4 gap-3 max-w-lg mx-auto mb-6">
+                    <!-- Cards will be generated by JavaScript -->
+                </div>
+                <div class="text-center">
+                    <button id="resetMemory" class="btn-secondary">Reiniciar Juego</button>
+                </div>
+            `;
+        }
+
+        function createLoveQuizGame() {
+            return `
+                <div class="text-center mb-6">
+                    <p class="text-text-secondary mb-4">Responde preguntas sobre nuestra historia de amor</p>
+                    <div class="flex justify-center gap-6 mb-4">
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-primary-700" id="quizQuestion">1/10</p>
+                            <p class="text-xs text-text-secondary">Pregunta</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-secondary-700" id="quizScore">0</p>
+                            <p class="text-xs text-text-secondary">Puntos</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="quizContent" class="max-w-2xl mx-auto">
+                    <!-- Quiz content will be generated by JavaScript -->
+                </div>
+            `;
+        }
+
+        function createHeartCatcherGame() {
+            return `
+                <div class="text-center mb-6">
+                    <p class="text-text-secondary mb-4">Mueve la cesta para atrapar los corazones que caen</p>
+                    <div class="flex justify-center gap-6 mb-4">
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-primary-700" id="catcherScore">0</p>
+                            <p class="text-xs text-text-secondary">Puntos</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-secondary-700" id="catcherLives">❤️❤️❤️</p>
+                            <p class="text-xs text-text-secondary">Vidas</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="catcherGame" class="relative bg-gradient-to-b from-primary-50 to-secondary-50 rounded-lg overflow-hidden mx-auto" style="width: 400px; height: 500px;">
+                    <!-- Game canvas will be generated by JavaScript -->
+                </div>
+                <div class="text-center mt-6">
+                    <button id="startCatcher" class="btn-primary">Comenzar Juego</button>
+                </div>
+            `;
+        }
+
+        function createLovePuzzleGame() {
+            return `
+                <div class="text-center mb-6">
+                    <p class="text-text-secondary mb-4">Arrastra las piezas para completar la imagen</p>
+                    <div class="flex justify-center gap-6 mb-4">
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-primary-700" id="puzzleMoves">0</p>
+                            <p class="text-xs text-text-secondary">Movimientos</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-secondary-700" id="puzzleTimer">00:00</p>
+                            <p class="text-xs text-text-secondary">Tiempo</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="puzzleGrid" class="grid grid-cols-3 gap-2 max-w-md mx-auto mb-6">
+                    <!-- Puzzle pieces will be generated by JavaScript -->
+                </div>
+                <div class="text-center">
+                    <button id="resetPuzzle" class="btn-secondary">Reiniciar Puzzle</button>
+                </div>
+            `;
+        }
+
+        function createWordSearchGame() {
+            return `
+                <div class="text-center mb-6">
+                    <p class="text-text-secondary mb-4">Encuentra las palabras románticas escondidas</p>
+                    <div class="flex justify-center gap-6 mb-4">
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-primary-700" id="wordsFound">0/8</p>
+                            <p class="text-xs text-text-secondary">Palabras</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-secondary-700" id="wordTimer">00:00</p>
+                            <p class="text-xs text-text-secondary">Tiempo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <div id="wordGrid" class="grid grid-cols-10 gap-1 mb-4">
+                            <!-- Word search grid will be generated by JavaScript -->
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline text-lg text-primary-700 mb-3">Palabras a Encontrar:</h3>
+                        <ul id="wordList" class="space-y-2">
+                            <!-- Word list will be generated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        function createTicTacLoveGame() {
+            return `
+                <div class="text-center mb-6">
+                    <p class="text-text-secondary mb-4">Juega al tres en raya con corazones ❤️ y besos 💋</p>
+                    <div class="flex justify-center gap-6 mb-4">
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-primary-700" id="ticTacTurn">❤️</p>
+                            <p class="text-xs text-text-secondary">Turno</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-secondary-700" id="ticTacWinsDisplay">0 - 0</p>
+                            <p class="text-xs text-text-secondary">Victorias</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="ticTacGrid" class="grid grid-cols-3 gap-3 max-w-sm mx-auto mb-6">
+                    <!-- Tic Tac Toe grid will be generated by JavaScript -->
+                </div>
+                <div class="text-center">
+                    <button id="resetTicTac" class="btn-secondary">Nueva Partida</button>
+                </div>
+            `;
+        }
+
+        // Initialize game logic based on game type
+        function initializeGameLogic(gameName) {
+            switch(gameName) {
+                case 'memory-match':
+                    initMemoryMatch();
+                    break;
+                case 'love-quiz':
+                    initLoveQuiz();
+                    break;
+                case 'heart-catcher':
+                    initHeartCatcher();
+                    break;
+                case 'love-puzzle':
+                    initLovePuzzle();
+                    break;
+                case 'word-search':
+                    initWordSearch();
+                    break;
+                case 'tic-tac-love':
+                    initTicTacLove();
+                    break;
+            }
+        }
+
+        // Memory Match Game Logic
+        function initMemoryMatch() {
+            const hearts = ['❤️', '💕', '💖', '💗', '💓', '💝', '💘', '💞'];
+            const cards = [...hearts, ...hearts].sort(() => Math.random() - 0.5);
+            let flippedCards = [];
+            let matchedPairs = 0;
+            let moves = 0;
+            let timer = 0;
+            let timerInterval;
+
+            const grid = document.getElementById('memoryGrid');
+            cards.forEach((heart, index) => {
+                const card = document.createElement('div');
+                card.className = 'aspect-square bg-primary-100 rounded-lg flex items-center justify-center text-4xl cursor-pointer hover:bg-primary-200 transition-colors';
+                card.dataset.index = index;
+                card.dataset.heart = heart;
+                card.innerHTML = '<span class="hidden">' + heart + '</span>';
+                card.addEventListener('click', () => flipCard(card));
+                grid.appendChild(card);
+            });
+
+            function flipCard(card) {
+                if (flippedCards.length === 2 || card.classList.contains('matched')) return;
+                
+                if (!timerInterval) {
+                    timerInterval = setInterval(() => {
+                        timer++;
+                        const minutes = Math.floor(timer / 60).toString().padStart(2, '0');
+                        const seconds = (timer % 60).toString().padStart(2, '0');
+                        document.getElementById('memoryTimer').textContent = `${minutes}:${seconds}`;
+                    }, 1000);
+                }
+
+                card.querySelector('span').classList.remove('hidden');
+                card.classList.add('bg-primary-300');
+                flippedCards.push(card);
+
+                if (flippedCards.length === 2) {
+                    moves++;
+                    document.getElementById('memoryMoves').textContent = moves;
+                    
+                    setTimeout(() => {
+                        if (flippedCards[0].dataset.heart === flippedCards[1].dataset.heart) {
+                            flippedCards.forEach(c => {
+                                c.classList.add('matched', 'bg-success-light');
+                                c.classList.remove('bg-primary-300');
+                            });
+                            matchedPairs++;
+                            document.getElementById('memoryPairs').textContent = `${matchedPairs}/8`;
+                            
+                            if (matchedPairs === 8) {
+                                clearInterval(timerInterval);
+                                setTimeout(() => {
+                                    alert(`¡Felicidades! Completaste el juego en ${moves} movimientos y ${timer} segundos`);
+                                    updateGameStats('memoryMatch', moves);
+                                }, 500);
+                            }
+                        } else {
+                            flippedCards.forEach(c => {
+                                c.querySelector('span').classList.add('hidden');
+                                c.classList.remove('bg-primary-300');
+                            });
+                        }
+                        flippedCards = [];
+                    }, 1000);
+                }
+            }
+
+            document.getElementById('resetMemory').addEventListener('click', () => {
+                clearInterval(timerInterval);
+                closeGameModal();
+                setTimeout(() => openGameModal('memory-match'), 300);
+            });
+        }
+
+        // Love Quiz Game Logic
+        function initLoveQuiz() {
+            const questions = [
+                {
+                    question: '¿donde empezo la verdadera esquizofrenia?',
+                    options: ['tu casa', 'mi casa', 'la casa de la vecina', 'la casa del vecino'],
+                    correct: 1
+                },
+                {
+                    question: '¿cuando fue nuestra primera pijamada?',
+                    options: ['17 de sep. 2025', '20 de sep. 2025', '17 de sep. 2024', 'ayer'],
+                    correct: 1
+                },
+                {
+                    question: '¿cuando fue la ultima noche que vivimos juntos?',
+                    options: ['31 de diciembre ', '17 de Enero', '20 de sep', 'ayer'],
+                    correct: 1
+                },
+                {
+                    question: '¿Cuál es mi color favorito?',
+                    options: ['Azul', 'Rosa', 'Verde', 'Morado'],
+                    correct: 1
+                },
+                {
+                    question: '¿que pelicula vimos que nos dejo llorando?',
+                    options: ['rapido y furiroso ', 'fronzen', '', 'harta'],
+                    correct: 3
+                },
+                {
+                    question: '¿de cual personaje nos enamoramos solo porque escribiamos una historia con el?',
+                    options: ['chifuyu', 'chuuya', 'Dazai', 'baji'],
+                    correct: 3
+                },
+                {
+                    question: '¿cuantas pijamadas hemos tenido?',
+                    options: ['1', '3', '5', '7'],
+                    correct: 2
+                },
+                {
+                    question: '¿cual es nuestra cancion?',
+                    options: ['juno', 'space between', 'you and me', 'pop'],
+                    correct: 1
+                },
+                {
+                    question: '¿Qué libro necesito urgentemente en fisico?',
+                    options: ['noches blancas', 'indigno de ser humano', 'el ocaso', 'el corazon delator'],
+                    correct: 1
+                },
+                {
+                    question: '¿Cuál es nuestra comida favorita para comprar juntas?',
+                    options: ['arroz', 'pan tostado', 'galleta', 'yaroa'],
+                    correct: 3
+                }
+            ];
+
+            let currentQuestion = 0;
+            let score = 0;
+
+            function displayQuestion() {
+                const q = questions[currentQuestion];
+                const content = document.getElementById('quizContent');
+                
+                content.innerHTML = `
+                    <div class="card-elevated mb-6">
+                        <h3 class="font-headline text-xl text-primary-700 mb-4">
+                            Pregunta ${currentQuestion + 1} de ${questions.length}
+                        </h3>
+                        <p class="text-lg text-text-primary mb-6">${q.question}</p>
+                        <div class="space-y-3">
+                            ${q.options.map((option, index) => `
+                                <button class="quiz-option w-full text-left p-4 rounded-lg border-2 border-gray-200 hover:border-primary-400 hover:bg-primary-50 transition-all" data-index="${index}">
+                                    ${option}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+
+                document.querySelectorAll('.quiz-option').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const selectedIndex = parseInt(this.dataset.index);
+                        checkAnswer(selectedIndex);
+                    });
+                });
+
+                document.getElementById('quizQuestion').textContent = `${currentQuestion + 1}/${questions.length}`;
+            }
+
+            function checkAnswer(selectedIndex) {
+                const q = questions[currentQuestion];
+                const buttons = document.querySelectorAll('.quiz-option');
+                
+                buttons.forEach((btn, index) => {
+                    btn.disabled = true;
+                    if (index === q.correct) {
+                        btn.classList.add('border-success', 'bg-success-light');
+                    } else if (index === selectedIndex && selectedIndex !== q.correct) {
+                        btn.classList.add('border-error', 'bg-error-light');
+                    }
+                });
+
+                if (selectedIndex === q.correct) {
+                    score += 10;
+                    document.getElementById('quizScore').textContent = score;
+                }
+
+                setTimeout(() => {
+                    currentQuestion++;
+                    if (currentQuestion < questions.length) {
+                        displayQuestion();
+                    } else {
+                        showResults();
+                    }
+                }, 1500);
+            }
+
+            function showResults() {
+                const percentage = (score / (questions.length * 10)) * 100;
+                const content = document.getElementById('quizContent');
+                
+                content.innerHTML = `
+                    <div class="card-elevated text-center">
+                        <div class="mb-6">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor" class="mx-auto text-accent-600">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-headline text-3xl text-primary-700 mb-4">¡Quiz Completado!</h3>
+                        <p class="text-5xl font-bold text-secondary-700 mb-2">${percentage}%</p>
+                        <p class="text-text-secondary mb-6">Obtuviste ${score} de ${questions.length * 10} puntos</p>
+                        <p class="text-lg text-text-primary mb-6">
+                            ${percentage >= 80 ? '¡Excelente! Conoces muy bien nuestra historia ❤️' : 
+                              percentage >= 60 ? '¡Bien hecho! Pero hay detalles que recordar 💕' : 
+                              '¡Necesitas prestar más atención! 💔'}
+                        </p>
+                        <button id="retryQuiz" class="btn-primary">Intentar de Nuevo</button>
+                    </div>
+                `;
+
+                document.getElementById('retryQuiz').addEventListener('click', () => {
+                    currentQuestion = 0;
+                    score = 0;
+                    document.getElementById('quizScore').textContent = '0';
+                    displayQuestion();
+                });
+
+                updateGameStats('loveQuiz', percentage);
+            }
+
+            displayQuestion();
+        }
+
+        // Heart Catcher Game Logic
+        function initHeartCatcher() {
+            let score = 0;
+            let lives = 3;
+            let gameActive = false;
+            let basketX = 175;
+            const gameArea = document.getElementById('catcherGame');
+            
+            // Create basket
+            const basket = document.createElement('div');
+            basket.className = 'absolute bottom-4 w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center text-2xl';
+            basket.style.left = basketX + 'px';
+            basket.innerHTML = '🧺';
+            gameArea.appendChild(basket);
+
+            // Mouse/Touch controls
+            gameArea.addEventListener('mousemove', (e) => {
+                if (!gameActive) return;
+                const rect = gameArea.getBoundingClientRect();
+                basketX = Math.max(0, Math.min(e.clientX - rect.left - 32, 336));
+                basket.style.left = basketX + 'px';
+            });
+
+            gameArea.addEventListener('touchmove', (e) => {
+                if (!gameActive) return;
+                e.preventDefault();
+                const rect = gameArea.getBoundingClientRect();
+                const touch = e.touches[0];
+                basketX = Math.max(0, Math.min(touch.clientX - rect.left - 32, 336));
+                basket.style.left = basketX + 'px';
+            });
+
+            function createHeart() {
+                if (!gameActive) return;
+                
+                const heart = document.createElement('div');
+                heart.className = 'absolute text-4xl';
+                heart.style.left = Math.random() * 360 + 'px';
+                heart.style.top = '-40px';
+                heart.innerHTML = '❤️';
+                gameArea.appendChild(heart);
+
+                let heartY = -40;
+                const fallSpeed = 2 + Math.random() * 2;
+
+                const fallInterval = setInterval(() => {
+                    heartY += fallSpeed;
+                    heart.style.top = heartY + 'px';
+
+                    // Check collision with basket
+                    const heartX = parseInt(heart.style.left);
+                    if (heartY >= 440 && heartY <= 460 && 
+                        heartX >= basketX && heartX <= basketX + 64) {
+                        score += 10;
+                        document.getElementById('catcherScore').textContent = score;
+                        heart.remove();
+                        clearInterval(fallInterval);
+                    }
+
+                    // Check if heart missed
+                    if (heartY > 500) {
+                        lives--;
+                        updateLives();
+                        heart.remove();
+                        clearInterval(fallInterval);
+                        
+                        if (lives === 0) {
+                            endGame();
+                        }
+                    }
+                }, 30);
+            }
+
+            function updateLives() {
+                const livesDisplay = '❤️'.repeat(lives) + '🖤'.repeat(3 - lives);
+                document.getElementById('catcherLives').textContent = livesDisplay;
+            }
+
+            function endGame() {
+                gameActive = false;
+                setTimeout(() => {
+                    alert(`¡Juego terminado! Puntuación final: ${score}`);
+                    updateGameStats('heartCatcher', score);
+                }, 500);
+            }
+
+            document.getElementById('startCatcher').addEventListener('click', function() {
+                if (gameActive) return;
+                
+                gameActive = true;
+                score = 0;
+                lives = 3;
+                document.getElementById('catcherScore').textContent = '0';
+                updateLives();
+                this.textContent = 'Juego en Progreso...';
+                this.disabled = true;
+
+                // Clear existing hearts
+                gameArea.querySelectorAll('.absolute.text-4xl').forEach(h => h.remove());
+
+                // Start spawning hearts
+                const spawnInterval = setInterval(() => {
+                    if (!gameActive) {
+                        clearInterval(spawnInterval);
+                        return;
+                    }
+                    createHeart();
+                }, 1000);
+            });
+        }
+
+        // Love Puzzle Game Logic
+        function initLovePuzzle() {
+            const pieces = Array.from({length: 9}, (_, i) => i);
+            let shuffled = [...pieces].sort(() => Math.random() - 0.5);
+            let moves = 0;
+            let timer = 0;
+            let timerInterval;
+
+            const grid = document.getElementById('puzzleGrid');
+            
+            function renderPuzzle() {
+                grid.innerHTML = '';
+                shuffled.forEach((piece, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'aspect-square bg-primary-100 rounded-lg flex items-center justify-center text-4xl font-bold cursor-pointer hover:bg-primary-200 transition-colors border-2 border-primary-300';
+                    div.textContent = piece + 1;
+                    div.dataset.index = index;
+                    div.addEventListener('click', () => movePiece(index));
+                    grid.appendChild(div);
+                });
+            }
+
+            function movePiece(index) {
+                if (!timerInterval) {
+                    timerInterval = setInterval(() => {
+                        timer++;
+                        const minutes = Math.floor(timer / 60).toString().padStart(2, '0');
+                        const seconds = (timer % 60).toString().padStart(2, '0');
+                        document.getElementById('puzzleTimer').textContent = `${minutes}:${seconds}`;
+                    }, 1000);
+                }
+
+                const emptyIndex = shuffled.indexOf(8);
+                const validMoves = [
+                    emptyIndex - 1, emptyIndex + 1,
+                    emptyIndex - 3, emptyIndex + 3
+                ].filter(i => {
+                    if (i < 0 || i > 8) return false;
+                    if (emptyIndex % 3 === 0 && i === emptyIndex - 1) return false;
+                    if (emptyIndex % 3 === 2 && i === emptyIndex + 1) return false;
+                    return true;
+                });
+
+                if (validMoves.includes(index)) {
+                    [shuffled[index], shuffled[emptyIndex]] = [shuffled[emptyIndex], shuffled[index]];
+                    moves++;
+                    document.getElementById('puzzleMoves').textContent = moves;
+                    renderPuzzle();
+
+                    if (shuffled.every((val, i) => val === i)) {
+                        clearInterval(timerInterval);
+                        setTimeout(() => {
+                            alert(`¡Felicidades! Completaste el puzzle en ${moves} movimientos y ${timer} segundos`);
+                            updateGameStats('lovePuzzle', timer);
+                        }, 500);
+                    }
+                }
+            }
+
+            renderPuzzle();
+
+            document.getElementById('resetPuzzle').addEventListener('click', () => {
+                clearInterval(timerInterval);
+                closeGameModal();
+                setTimeout(() => openGameModal('love-puzzle'), 300);
+            });
+        }
+
+        // Word Search Game Logic
+        function initWordSearch() {
+            const words = ['AMOR', 'BESO', 'CORAZON', 'FELIZ', 'JUNTOS', 'PASION', 'ROMANCE', 'TERNURA'];
+            const gridSize = 10;
+            let grid = Array(gridSize).fill().map(() => Array(gridSize).fill(''));
+            let foundWords = [];
+            let timer = 0;
+            let timerInterval;
+
+            // Place words in grid
+            words.forEach(word => {
+                let placed = false;
+                while (!placed) {
+                    const direction = Math.random() > 0.5 ? 'horizontal' : 'vertical';
+                    const row = Math.floor(Math.random() * gridSize);
+                    const col = Math.floor(Math.random() * gridSize);
+
+                    if (direction === 'horizontal' && col + word.length <= gridSize) {
+                        let canPlace = true;
+                        for (let i = 0; i < word.length; i++) {
+                            if (grid[row][col + i] !== '' && grid[row][col + i] !== word[i]) {
+                                canPlace = false;
+                                break;
+                            }
+                        }
+                        if (canPlace) {
+                            for (let i = 0; i < word.length; i++) {
+                                grid[row][col + i] = word[i];
+                            }
+                            placed = true;
+                        }
+                    } else if (direction === 'vertical' && row + word.length <= gridSize) {
+                        let canPlace = true;
+                        for (let i = 0; i < word.length; i++) {
+                            if (grid[row + i][col] !== '' && grid[row + i][col] !== word[i]) {
+                                canPlace = false;
+                                break;
+                            }
+                        }
+                        if (canPlace) {
+                            for (let i = 0; i < word.length; i++) {
+                                grid[row + i][col] = word[i];
+                            }
+                            placed = true;
+                        }
+                    }
+                }
+            });
+
+            // Fill empty cells with random letters
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    if (grid[i][j] === '') {
+                        grid[i][j] = letters[Math.floor(Math.random() * letters.length)];
+                    }
+                }
+            }
+
+            // Render grid
+            const gridElement = document.getElementById('wordGrid');
+            grid.forEach((row, i) => {
+                row.forEach((letter, j) => {
+                    const cell = document.createElement('div');
+                    cell.className = 'aspect-square bg-primary-100 rounded flex items-center justify-center text-sm font-bold cursor-pointer hover:bg-primary-200 transition-colors';
+                    cell.textContent = letter;
+                    cell.dataset.row = i;
+                    cell.dataset.col = j;
+                    gridElement.appendChild(cell);
+                });
+            });
+
+            // Render word list
+            const wordList = document.getElementById('wordList');
+            words.forEach(word => {
+                const li = document.createElement('li');
+                li.className = 'text-text-primary';
+                li.dataset.word = word;
+                li.innerHTML = `<span class="font-medium">${word}</span>`;
+                wordList.appendChild(li);
+            });
+
+            // Start timer on first click
+            gridElement.addEventListener('click', function startTimer() {
+                if (!timerInterval) {
+                    timerInterval = setInterval(() => {
+                        timer++;
+                        const minutes = Math.floor(timer / 60).toString().padStart(2, '0');
+                        const seconds = (timer % 60).toString().padStart(2, '0');
+                        document.getElementById('wordTimer').textContent = `${minutes}:${seconds}`;
+                    }, 1000);
+                }
+            }, { once: true });
+
+            // Simple word selection (click to highlight)
+            let selectedCells = [];
+            gridElement.addEventListener('click', (e) => {
+                if (e.target.dataset.row) {
+                    const cell = e.target;
+                    if (cell.classList.contains('bg-success-light')) return;
+
+                    selectedCells.push(cell);
+                    cell.classList.add('bg-primary-300');
+
+                    // Check if word is formed
+                    if (selectedCells.length >= 3) {
+                        const selectedWord = selectedCells.map(c => c.textContent).join('');
+                        if (words.includes(selectedWord) && !foundWords.includes(selectedWord)) {
+                            foundWords.push(selectedWord);
+                            selectedCells.forEach(c => {
+                                c.classList.remove('bg-primary-300');
+                                c.classList.add('bg-success-light');
+                            });
+                            document.querySelector(`[data-word="${selectedWord}"]`).classList.add('line-through', 'text-success');
+                            document.getElementById('wordsFound').textContent = `${foundWords.length}/${words.length}`;
+
+                            if (foundWords.length === words.length) {
+                                clearInterval(timerInterval);
+                                setTimeout(() => {
+                                    alert(`¡Felicidades! Encontraste todas las palabras en ${timer} segundos`);
+                                    updateGameStats('wordSearch', timer);
+                                }, 500);
+                            }
+                        } else {
+                            selectedCells.forEach(c => c.classList.remove('bg-primary-300'));
+                        }
+                        selectedCells = [];
+                    }
+                }
+            });
+        }
+
+        // Tic Tac Love Game Logic
+        function initTicTacLove() {
+            let board = Array(9).fill(null);
+            let currentPlayer = '❤️';
+            let playerWins = 0;
+            let computerWins = 0;
+            let gameActive = true;
+
+            const grid = document.getElementById('ticTacGrid');
+            
+            function renderBoard() {
+                grid.innerHTML = '';
+                board.forEach((cell, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'aspect-square bg-primary-100 rounded-lg flex items-center justify-center text-5xl cursor-pointer hover:bg-primary-200 transition-colors border-2 border-primary-300';
+                    div.textContent = cell || '';
+                    div.dataset.index = index;
+                    if (!cell && gameActive) {
+                        div.addEventListener('click', () => makeMove(index));
+                    }
+                    grid.appendChild(div);
+                });
+            }
+
+            function makeMove(index) {
+                if (board[index] || !gameActive) return;
+
+                board[index] = currentPlayer;
+                renderBoard();
+
+                if (checkWinner(currentPlayer)) {
+                    gameActive = false;
+                    setTimeout(() => {
+                        alert(`¡${currentPlayer} gana!`);
+                        if (currentPlayer === '❤️') {
+                            playerWins++;
+                        }
+                        updateWinsDisplay();
+                        resetBoard();
+                    }, 500);
+                    return;
+                }
+
+                if (board.every(cell => cell !== null)) {
+                    gameActive = false;
+                    setTimeout(() => {
+                        alert('¡Empate!');
+                        resetBoard();
+                    }, 500);
+                    return;
+                }
+
+                currentPlayer = currentPlayer === '❤️' ? '💋' : '❤️';
+                document.getElementById('ticTacTurn').textContent = currentPlayer;
+
+                // Simple AI move
+                if (currentPlayer === '💋' && gameActive) {
+                    setTimeout(() => {
+                        const emptyIndices = board.map((cell, i) => cell === null ? i : null).filter(i => i !== null);
+                        const randomIndex = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
+                        makeMove(randomIndex);
+                    }, 500);
+                }
+            }
+
+            function checkWinner(player) {
+                const winPatterns = [
+                    [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+                    [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+                    [0, 4, 8], [2, 4, 6] // diagonals
+                ];
+
+                return winPatterns.some(pattern => 
+                    pattern.every(index => board[index] === player)
+                );
+            }
+
+            function resetBoard() {
+                board = Array(9).fill(null);
+                currentPlayer = '❤️';
+                gameActive = true;
+                document.getElementById('ticTacTurn').textContent = currentPlayer;
+                renderBoard();
+            }
+
+            function updateWinsDisplay() {
+                document.getElementById('ticTacWinsDisplay').textContent = `${playerWins} - ${computerWins}`;
+                updateGameStats('ticTacLove', playerWins);
+            }
+
+            renderBoard();
+
+            document.getElementById('resetTicTac').addEventListener('click', resetBoard);
+        }
+
+        // Update game statistics
+        function updateGameStats(gameName, score) {
+            const stats = initGameStats();
+            stats.totalGamesPlayed++;
+
+            const gameKey = gameName.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+            
+            if (stats.games[gameKey]) {
+                stats.games[gameKey].plays++;
+                if (score > stats.games[gameKey].best) {
+                    stats.games[gameKey].best = score;
+                }
+            }
+
+            if (score > stats.highScore) {
+                stats.highScore = score;
+            }
+
+            // Check achievements
+            if (stats.totalGamesPlayed === 1 && !stats.achievements.firstGame) {
+                stats.achievements.firstGame = true;
+                stats.achievementsUnlocked++;
+            }
+            if (stats.totalGamesPlayed >= 5 && !stats.achievements.fiveGames) {
+                stats.achievements.fiveGames = true;
+                stats.achievementsUnlocked++;
+            }
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+            updateStatsDisplay();
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateStatsDisplay();
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

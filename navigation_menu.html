@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menú de navegación principal - Explora recuerdos, historias y juegos románticos">
+    <title>Menú Principal - ValentineMemories</title>
+    <link rel="stylesheet" href="main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fvalentinem6121back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.15"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-gradient-romantic min-h-screen flex flex-col overflow-x-hidden">
+    
+    <!-- Animated Background Hearts -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div class="heart-float absolute top-20 left-10 text-primary-200 opacity-20">
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute top-40 right-16 text-secondary-200 opacity-15" style="animation-delay: 1.2s;">
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute bottom-32 left-1/4 text-accent-200 opacity-18" style="animation-delay: 0.8s;">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute top-1/3 right-1/4 text-primary-300 opacity-22" style="animation-delay: 1.8s;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute bottom-20 right-20 text-secondary-300 opacity-16" style="animation-delay: 0.4s;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="relative z-10 pt-8 pb-6 px-4">
+        <div class="container-custom">
+            <!-- Back Button -->
+            <div class="mb-6">
+                <a href="animated_heart_dashboard.html" 
+                   class="inline-flex items-center gap-2 text-primary-700 hover:text-primary-800 transition-colors duration-300 group"
+                   aria-label="Volver al panel principal">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:-translate-x-1 transition-transform duration-300">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    <span class="font-cta font-medium">Volver</span>
+                </a>
+            </div>
+
+            <!-- Page Title -->
+            <div class="text-center">
+                <h1 class="font-headline text-4xl md:text-5xl text-primary-700 mb-3">
+                    Explora Nuestro Mundo
+                </h1>
+                <p class="font-accent text-2xl text-secondary-600 mb-2">
+                    Elige tu aventura romántica
+                </p>
+                <p class="text-text-secondary max-w-2xl mx-auto">
+                    Cada sección guarda momentos especiales, historias inolvidables y diversión compartida
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation Cards Section -->
+    <main class="relative z-10 flex-1 py-12 px-4">
+        <div class="container-custom">
+            <!-- Navigation Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Card 1: Memory Gallery (Recuerdos) -->
+                <article class="card-elevated group hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 cursor-pointer relative overflow-hidden"
+                         onclick="navigateToSection('memory_gallery.html')"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Acceder a la galería de recuerdos">
+                    
+                    <!-- Card Background Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary-50 to-primary-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- Card Content -->
+                    <div class="relative z-10">
+                        <!-- Icon Container -->
+                        <div class="mb-6 flex justify-center">
+                            <div class="w-20 h-20 rounded-full bg-primary-100 flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300 group-hover:scale-110 transform transition-transform duration-300">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary-600">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card Title -->
+                        <h2 class="font-headline text-2xl text-primary-700 mb-3 text-center group-hover:text-primary-800 transition-colors duration-300">
+                            Galería de Recuerdos
+                        </h2>
+
+                        <!-- Card Description -->
+                        <p class="text-text-secondary text-center mb-4 leading-relaxed">
+                            Explora nuestra colección de momentos especiales capturados en fotografías. Cada imagen cuenta una historia de amor y amistad.
+                        </p>
+
+                        <!-- Card Preview Badge -->
+                        <div class="flex items-center justify-center gap-2 text-sm text-primary-600 font-medium">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span>Protegido con contraseña</span>
+                        </div>
+
+                        <!-- Hover Arrow Indicator -->
+                        <div class="mt-6 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary-600 animate-bounce">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Friendship Timeline -->
+                <article class="card-elevated group hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 cursor-pointer relative overflow-hidden"
+                         onclick="navigateToSection('friendship_timeline.html')"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Acceder a la línea de tiempo de nuestra amistad">
+                    
+                    <!-- Card Background Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-secondary-50 to-secondary-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- Card Content -->
+                    <div class="relative z-10">
+                        <!-- Icon Container -->
+                        <div class="mb-6 flex justify-center">
+                            <div class="w-20 h-20 rounded-full bg-secondary-100 flex items-center justify-center group-hover:bg-secondary-200 transition-colors duration-300 group-hover:scale-110 transform transition-transform duration-300">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-secondary-600">
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card Title -->
+                        <h2 class="font-headline text-2xl text-secondary-700 mb-3 text-center group-hover:text-secondary-800 transition-colors duration-300">
+                            Historia de Nuestra Amistad
+                        </h2>
+
+                        <!-- Card Description -->
+                        <p class="text-text-secondary text-center mb-4 leading-relaxed">
+                            Revive el viaje desde el primer encuentro hasta hoy. Una línea de tiempo de momentos que definieron nuestra conexión especial.
+                        </p>
+
+                        <!-- Card Preview Badge -->
+                        <div class="flex items-center justify-center gap-2 text-sm text-secondary-600 font-medium">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span>Acceso libre</span>
+                        </div>
+
+                        <!-- Hover Arrow Indicator -->
+                        <div class="mt-6 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-secondary-600 animate-bounce">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Interactive Games Hub -->
+                <article class="card-elevated group hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 cursor-pointer relative overflow-hidden"
+                         onclick="navigateToSection('games_hub.html')"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Acceder al centro de juegos interactivos">
+                    
+                    <!-- Card Background Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent-50 to-accent-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- Card Content -->
+                    <div class="relative z-10">
+                        <!-- Icon Container -->
+                        <div class="mb-6 flex justify-center">
+                            <div class="w-20 h-20 rounded-full bg-accent-100 flex items-center justify-center group-hover:bg-accent-200 transition-colors duration-300 group-hover:scale-110 transform transition-transform duration-300">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-accent-600">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card Title -->
+                        <h2 class="font-headline text-2xl text-accent-700 mb-3 text-center group-hover:text-accent-800 transition-colors duration-300">
+                            Centro de Juegos
+                        </h2>
+
+                        <!-- Card Description -->
+                        <p class="text-text-secondary text-center mb-4 leading-relaxed">
+                            Diviértete con juegos románticos diseñados especialmente para nosotros. Crea nuevos recuerdos mientras juegas.
+                        </p>
+
+                        <!-- Card Preview Badge -->
+                        <div class="flex items-center justify-center gap-2 text-sm text-accent-600 font-medium">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span>Múltiples juegos disponibles</span>
+                        </div>
+
+                        <!-- Hover Arrow Indicator -->
+                        <div class="mt-6 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-accent-600 animate-bounce">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Quick Stats Section -->
+            <div class="mt-16 max-w-4xl mx-auto">
+                <div class="card bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 border border-primary-200">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <!-- Stat 1 -->
+                        <div class="flex flex-col items-center">
+                            <div class="text-3xl font-headline text-primary-700 mb-2">127</div>
+                            <p class="text-sm text-text-secondary">Fotos Compartidas</p>
+                        </div>
+                        <!-- Stat 2 -->
+                        <div class="flex flex-col items-center border-l border-r border-primary-200 md:border-l md:border-r-0 lg:border-l lg:border-r">
+                            <div class="text-3xl font-headline text-secondary-700 mb-2">24</div>
+                            <p class="text-sm text-text-secondary">Momentos Especiales</p>
+                        </div>
+                        <!-- Stat 3 -->
+                        <div class="flex flex-col items-center">
+                            <div class="text-3xl font-headline text-accent-700 mb-2">5</div>
+                            <p class="text-sm text-text-secondary">Juegos Románticos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inspirational Quote Section -->
+            <div class="mt-12 text-center max-w-2xl mx-auto">
+                <blockquote class="relative">
+                    <svg class="absolute top-0 left-0 transform -translate-x-6 -translate-y-4 h-8 w-8 text-primary-200" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                    </svg>
+                    <p class="font-accent text-xl md:text-2xl text-primary-700 italic relative z-10 px-8">
+                        Cada momento juntos es un tesoro que guardamos en el corazón
+                    </p>
+                    <svg class="absolute bottom-0 right-0 transform translate-x-6 translate-y-4 h-8 w-8 text-primary-200" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22.648 28c4.896-3.456 8.352-9.12 8.352-15.36 0-5.088-3.072-8.064-6.624-8.064-3.36 0-5.856 2.688-5.856 5.856 0 3.168 2.208 5.472 5.088 5.472.576 0 1.344-.096 1.536-.192-.48 3.264-3.552 7.104-6.624 9.024L22.648 28zm-16.512 0c4.8-3.456 8.256-9.12 8.256-15.36 0-5.088-3.072-8.064-6.624-8.064-3.264 0-5.856 2.688-5.856 5.856 0 3.168 2.304 5.472 5.184 5.472.576 0 1.248-.096 1.44-.192-.48 3.264-3.456 7.104-6.528 9.024L6.136 28z" />
+                    </svg>
+                </blockquote>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-8 px-4 border-t border-primary-100">
+        <div class="container-custom text-center">
+            <p class="text-xs text-text-tertiary mb-2">
+                Creado con 
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="inline text-secondary-500 animate-pulse-heart">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                para alguien especial
+            </p>
+            <p class="text-xs text-text-tertiary">
+                © 2026 ValentineMemories. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay (Hidden by default) -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 hidden flex items-center justify-center">
+        <div class="card-elevated text-center">
+            <div class="inline-flex items-center gap-3 text-primary-600">
+                <svg class="animate-spin h-8 w-8" viewBox="0 0 24 24" fill="none">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span class="text-lg font-medium">Cargando...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Navigation and Interactions -->
+    <script>
+        // Navigation function with loading state
+        function navigateToSection(page) {
+            // Show loading overlay
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            loadingOverlay.classList.remove('hidden');
+            loadingOverlay.classList.add('flex');
+
+            // Simulate loading delay for smooth transition
+            setTimeout(() => {
+                window.location.href = page;
+            }, 600);
+        }
+
+        // Keyboard accessibility for cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('article[role="button"]');
+            
+            cards.forEach(card => {
+                card.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        card.click();
+                    }
+                });
+            });
+
+            // Add focus styles
+            cards.forEach(card => {
+                card.addEventListener('focus', function() {
+                    this.classList.add('ring-2', 'ring-primary-400', 'ring-offset-2');
+                });
+                
+                card.addEventListener('blur', function() {
+                    this.classList.remove('ring-2', 'ring-primary-400', 'ring-offset-2');
+                });
+            });
+        });
+
+        // Smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Add entrance animation on page load
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('article');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                }, index * 150);
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

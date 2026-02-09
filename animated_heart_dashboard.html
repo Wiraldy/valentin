@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard romántico con corazones flotantes animados y mensajes interactivos de San Valentín">
+    <title>Dashboard Romántico - ValentineMemories</title>
+    <link rel="stylesheet" href="main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fvalentinem6121back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.15"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  
+  <style>
+    /* Permitir scroll en la página */
+    body {
+        overflow-y: auto !important;
+        overflow-x: hidden;
+        min-height: 100vh;
+        background: linear-gradient(180deg, #ffe5f0 0%, #fff0f7 50%, #ffe5f0 100%);
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Estilos del nuevo menú inspirado en la imagen */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 15px rgba(214, 51, 132, 0.08);
+        border-bottom: 3px solid #ffc0d9;
+    }
+    
+    .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0.75rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .logo-section svg {
+        width: 45px;
+        height: 45px;
+        filter: drop-shadow(0 2px 4px rgba(214, 51, 132, 0.2));
+    }
+    
+    .logo-text h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #d63384;
+        margin: 0;
+        line-height: 1.2;
+        font-family: 'Georgia', serif;
+    }
+    
+    .logo-text p {
+        font-size: 0.75rem;
+        color: #999;
+        margin: 0;
+        font-style: italic;
+    }
+    
+    .main-nav {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+    }
+    
+    .main-nav a {
+        position: relative;
+        color: #d63384;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        transition: all 0.3s ease;
+    }
+    
+    .main-nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #d63384, #ff69b4);
+        transition: width 0.3s ease;
+    }
+    
+    .main-nav a:hover::after,
+    .main-nav a.active::after {
+        width: 100%;
+    }
+    
+    .main-nav a.active {
+        color: #ff1493;
+    }
+    
+    .main-nav a:hover {
+        color: #ff1493;
+        transform: translateY(-2px);
+    }
+    
+    /* Contenedor principal */
+    .page-container {
+        min-height: 100vh;
+        position: relative;
+        padding-bottom: 50px;
+    }
+    
+    /* Contenedor de corazones que ocupa toda la página */
+    #heartsContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    .heart-float {
+        position: absolute;
+        animation: float 6s ease-in-out infinite;
+        transition: all 0.3s ease;
+        pointer-events: auto;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+    
+    .heart-float:hover {
+        transform: scale(1.3) rotate(10deg) !important;
+        filter: drop-shadow(0 0 20px currentColor);
+        z-index: 50;
+    }
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        25% {
+            transform: translateY(-20px) rotate(5deg);
+        }
+        50% {
+            transform: translateY(-10px) rotate(-3deg);
+        }
+        75% {
+            transform: translateY(-25px) rotate(7deg);
+        }
+    }
+    
+    /* Estilos mejorados para los sobres */
+    .envelopes-section {
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .envelopes-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 3rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+    
+    .envelope-wrapper {
+        perspective: 1500px;
+        cursor: pointer;
+        filter: drop-shadow(0 10px 25px rgba(214, 51, 132, 0.2));
+        transition: filter 0.3s ease;
+    }
+    
+    .envelope-wrapper:hover {
+        filter: drop-shadow(0 15px 35px rgba(214, 51, 132, 0.35));
+    }
+    
+    .envelope {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        transform-style: preserve-3d;
+        transition: transform 0.4s ease;
+    }
+    
+    .envelope:hover {
+        transform: translateY(-12px) rotateY(2deg);
+    }
+    
+    .envelope-body {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(145deg, #ffd4eb 0%, #ffb3d9 50%, #ff8fb3 100%);
+        border-radius: 12px;
+        box-shadow: 
+            inset 0 -2px 8px rgba(0, 0, 0, 0.1),
+            0 8px 24px rgba(214, 51, 132, 0.2);
+        border: 3px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Decoración del sobre */
+    .envelope-body::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+    
+    .envelope-body::after {
+        content: '♥';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: rgba(214, 51, 132, 0.4);
+        animation: heartbeat 2s ease-in-out infinite;
+    }
+    
+    @keyframes heartbeat {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); }
+        50% { transform: translate(-50%, -50%) scale(1.1); }
+    }
+    
+    .envelope-flap {
+        position: absolute;
+        width: 100%;
+        height: 55%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(145deg, #ff6b9d 0%, #d63384 100%);
+        border-radius: 12px 12px 0 0;
+        transform-origin: top center;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 40%, 0 85%);
+        z-index: 2;
+        box-shadow: 
+            0 2px 8px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Textura del sobre */
+    .envelope-flap::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.05) 10px,
+            rgba(255, 255, 255, 0.05) 20px
+        );
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .envelope-wrapper.open .envelope-flap {
+        transform: rotateX(-185deg);
+    }
+    
+    .envelope-label {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        background: rgba(214, 51, 132, 0.3);
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Sello decorativo */
+    .envelope-stamp {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 182, 193, 0.8) 100%);
+        border-radius: 8px;
+        border: 3px dashed rgba(214, 51, 132, 0.5);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        transform: rotate(12deg);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Modal de carta */
+    .letter-modal-content {
+        background: white;
+        max-width: 600px;
+        width: 100%;
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        position: relative;
+        animation: letterAppear 0.5s ease;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .letter-paper {
+        background: white;
+        padding: 2rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .letter-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #f0f0f0;
+    }
+    
+    .letter-title {
+        font-size: 1.8rem;
+        color: #D63384;
+        font-family: 'Georgia', serif;
+        margin-bottom: 0.5rem;
+    }
+    
+    .letter-date {
+        font-size: 0.9rem;
+        color: #666;
+        font-style: italic;
+    }
+    
+    .letter-body {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #333;
+        text-align: justify;
+        margin-bottom: 1.5rem;
+        white-space: pre-line;
+    }
+    
+    .letter-signature {
+        text-align: right;
+        font-size: 1.2rem;
+        color: #D63384;
+        font-family: 'Brush Script MT', cursive;
+        margin-top: 1.5rem;
+    }
+    
+    @keyframes letterAppear {
+        from {
+            opacity: 0;
+            transform: scale(0.9) translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+    
+    /* Stats Section */
+    .stats-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .stat-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(214, 51, 132, 0.15);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(214, 51, 132, 0.25);
+    }
+    
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #d63384;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+        color: #666;
+    }
+    
+    /* Quick Actions */
+    .quick-actions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 2rem auto 3rem;
+        padding: 0 1rem;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .action-card {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(214, 51, 132, 0.1);
+    }
+    
+    .action-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(214, 51, 132, 0.2);
+    }
+    
+    .action-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .action-content h3 {
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
+    
+    .action-content p {
+        font-size: 0.9rem;
+        color: #999;
+        margin: 0;
+    }
+    
+    @media (max-width: 768px) {
+        .main-nav {
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-container {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        .envelopes-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .main-nav a {
+            font-size: 0.9rem;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+        }
+    }
+  </style>
+</head>
+<body>
+    
+    <!-- Floating Hearts Container - FIJO EN TODA LA PANTALLA -->
+    <div 
+        id="heartsContainer" 
+        role="region"
+        aria-label="Corazones interactivos flotantes"
+    >
+        <!-- Hearts will be dynamically generated here -->
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav class="nav-container" aria-label="Navegación principal">
+            <!-- Logo -->
+            <a href="animated_heart_dashboard.html" class="logo-section">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D63384;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#DC3545;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FD7E14;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M50 85 L20 55 C10 45 10 30 20 20 C30 10 45 10 50 20 C55 10 70 10 80 20 C90 30 90 45 80 55 Z" 
+                          fill="url(#logoGradient)"/>
+                </svg>
+                <div class="logo-text">
+                    <h1>ValentineMemories</h1>
+                    <p>Nuestra Historia</p>
+                </div>
+            </a>
+
+            <!-- Menú Horizontal -->
+            <div class="main-nav">
+                <a href="animated_heart_dashboard.html" class="active">Inicio</a>
+                <a href="friendship_timeline.html">Línea de Tiempo</a>
+                <a href="memory_gallery.html">Recuerdos</a>
+                <a href="games_hub.html">Juegos</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="page-container">
+        
+        <!-- Welcome Section -->
+        <section style="text-align: center; padding: 2rem 1rem 1rem; position: relative; z-index: 10;">
+            <h1 style="font-size: 3rem; color: #d63384; margin-bottom: 0.5rem; font-family: Georgia, serif;">
+                ¡Bienvenida a Nuestro Espacio Especial!
+            </h1>
+            <p style="font-size: 1.5rem; color: #ff69b4; margin-bottom: 1rem;">
+                Abre los sobres y toca los corazones para descubrir las cartas
+            </p>
+        </section>
+
+        <!-- Envelopes Section -->
+        <section class="envelopes-section">
+            <h2 style="font-size: 2rem; color: #d63384; text-align: center; margin-bottom: 1.5rem; font-family: Georgia, serif;">Cartas Especiales</h2>
+            <div class="envelopes-container">
+                <div class="envelope-wrapper" data-letter="0">
+                    <div class="envelope">
+                        <div class="envelope-body"></div>
+                        <div class="envelope-stamp">💌</div>
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-label">Carta Especial #1</div>
+                    </div>
+                </div>
+                <div class="envelope-wrapper" data-letter="1">
+                    <div class="envelope">
+                        <div class="envelope-body"></div>
+                        <div class="envelope-stamp">💖</div>
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-label">Carta Especial #2</div>
+                    </div>
+                </div>
+                <div class="envelope-wrapper" data-letter="2">
+                    <div class="envelope">
+                        <div class="envelope-body"></div>
+                        <div class="envelope-stamp">💝</div>
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-label">Carta Especial #3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <!-- Messages Discovered -->
+            <div class="stat-card">
+                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <div class="stat-number">
+                    <span id="messagesCount">0</span>/<span id="totalMessages">15</span>
+                </div>
+                <div class="stat-label">Mensajes Descubiertos</div>
+            </div>
+
+            <!-- Hearts Clicked -->
+            <div class="stat-card">
+                <svg class="stat-icon" viewBox="0 0 24 24" fill="currentColor" style="color: #ff69b4;">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <div class="stat-number" style="color: #ff69b4;">
+                    <span id="heartsClicked">0</span>
+                </div>
+                <div class="stat-label">Corazones Tocados</div>
+            </div>
+
+            <!-- Time Spent -->
+            <div class="stat-card">
+                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #FD7E14;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <div class="stat-number" style="color: #FD7E14;">
+                    <span id="timeSpent">0:00</span>
+                </div>
+                <div class="stat-label">Tiempo Juntos</div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <!-- View All Messages -->
+            <a href="navigation_menu.html" class="action-card">
+                <div class="action-icon" style="background: linear-gradient(135deg, #ffd4eb 0%, #ffb3d9 100%);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="color: #d63384;">
+                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                    </svg>
+                </div>
+                <div class="action-content">
+                    <h3>Ver Todos los Mensajes</h3>
+                    <p>Explora tu colección completa</p>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #d63384;">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+
+            <!-- Memory Gallery -->
+            <a href="memory_gallery.html" class="action-card">
+                <div class="action-icon" style="background: linear-gradient(135deg, #ffd4eb 0%, #ffc0cb 100%);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #ff69b4;">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                </div>
+                <div class="action-content">
+                    <h3>Galería de Recuerdos</h3>
+                    <p>Revive momentos especiales</p>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #ff69b4;">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+
+            <!-- Games Hub -->
+            <a href="games_hub.html" class="action-card">
+                <div class="action-icon" style="background: linear-gradient(135deg, #ffe5d9 0%, #ffd4c0 100%);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #FD7E14;">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                </div>
+                <div class="action-content">
+                    <h3>Juegos Románticos</h3>
+                    <p>Diviértete con mini-juegos</p>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #FD7E14;">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Message Modal Overlay -->
+    <div 
+        id="messageModal" 
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;"
+    >
+        <div style="background: white; max-width: 500px; width: 100%; padding: 3rem; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); position: relative;">
+            <!-- Close Button -->
+            <button 
+                id="closeModal"
+                style="position: absolute; top: 1rem; right: 1rem; width: 40px; height: 40px; border-radius: 50%; background: #ffd4eb; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;"
+                aria-label="Cerrar mensaje"
+            >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #d63384;">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Modal Content -->
+            <div style="text-align: center; padding-top: 1rem;">
+                <!-- Heart Icon -->
+                <div style="margin-bottom: 1.5rem;">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor" style="color: #d63384; display: inline-block;">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+
+                <!-- Message Title -->
+                <h2 id="modalTitle" style="font-size: 2rem; color: #d63384; margin-bottom: 1rem; font-family: Georgia, serif;">
+                    <!-- Dynamic title -->
+                </h2>
+
+                <!-- Message Content -->
+                <p id="modalMessage" style="font-size: 1.1rem; color: #333; line-height: 1.6; margin-bottom: 1.5rem;">
+                    <!-- Dynamic message -->
+                </p>
+
+                <!-- Message Number -->
+                <p style="font-size: 0.9rem; color: #999;">
+                    Mensaje <span id="modalNumber"></span> de <span id="modalTotal"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Letter Modal -->
+    <div 
+        id="letterModal" 
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4"
+        role="dialog"
+        aria-modal="true"
+        style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;"
+    >
+        <div class="letter-modal-content">
+            <button 
+                id="closeLetterModal"
+                style="position: absolute; top: 1rem; right: 1rem; width: 40px; height: 40px; border-radius: 50%; background: #ffd4eb; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;"
+                aria-label="Cerrar carta"
+            >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #d63384;">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="letter-paper">
+                <div class="letter-header">
+                    <h2 class="letter-title" id="letterTitle"></h2>
+                    <p class="letter-date">San Valentín 2026</p>
+                </div>
+                <div class="letter-body" id="letterBody"></div>
+                <div class="letter-signature">Con todo mi amor ❤️</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: rgba(255, 255, 255, 0.95); border-top: 2px solid #ffc0d9; padding: 2rem 0; text-align: center; margin-top: 2rem; position: relative; z-index: 10;">
+        <p style="color: #999; font-size: 0.9rem; margin-bottom: 0.5rem;">
+            Creado con 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; color: #ff69b4;">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            para alguien especial
+        </p>
+        <p style="color: #ccc; font-size: 0.8rem;">
+            © 2026 ValentineMemories. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Cartas especiales
+        const letters = [
+            {
+                title: "primera",
+                body: "kleidy,\n\n Aveces uno no dice lo importante porque asume que ya se sabe, pero hoy quiero dejarlo por escrito. Eres una de esas personas que hacen que la familia no sea solo un lazo, sino un lugar seguro. .\n\n Tienes una forma muy tuya de estar presente. No siempre con palabras largas, sino con gestos, con miradas que entienden, con risas que alivian y con silencios que acompañan. Contigo, incluso los días comunes tienen algo especial, como si llevaran una luz discreta pero constante. ."
+            },
+            {
+                title: "segunda",
+                body: "espontaneo\n\n.Ni siquiera tenia previsto escribir estas cartas, solo estaba pensando en el diseño y pense que con cartas seria mas bonito y pues aprovecho\n\nTokyo Revengers siempre tendrá un lugar especial en mi corazón, no solo por la historia, sino porque fue el anime que nos unió y fortaleció nuestra amistad.\n\n"
+            },
+            {
+                title: "Para Siempre",
+                body: "te quiero,\n\n Siempre voy a agradecer que la envidia de los envidiosos de nuestra familia no haya logrado separarnos, porque como somos hermosas, creativas, inteligentes y asi, nos querian separar, pero no les salio, no, no, no, porque las barbieluponi no se separan tan facil\n\n\n\nTe quiero mucho, fea  ❤️"
+            }
+        ];
+
+        // Valentine's Day Messages Collection
+        const valentineMessages = [
+            {
+                title: "¡Feliz San Valentín!",
+                message: "Eres la razón por la que cada día es especial. Gracias por llenar mi vida de amor y alegría."
+            },
+            {
+                title: "Mi Amor Eterno",
+                message: "Cada momento contigo es un regalo. Tu sonrisa ilumina mis días más oscuros."
+            },
+            {
+                title: "Juntas Para Siempre",
+                message: "No importa cuánto tiempo pase, mi cariño por ti solo crece más fuerte cada día."
+            },
+            {
+                title: "Mejor amiga",
+                message: "no eres de mi sangre y pareces mi hermanita."
+            },
+            {
+                title: "Corazon",
+                message: "Siempre tendre tokyo revengers en mi corazon, porque fue el anime que nos unio."
+            },
+            {
+                title: "Nuestro Amor",
+                message: "Lo que tenemos es único y especial. Cada día contigo es una nueva aventura llena de amor."
+            },
+            {
+                title: "Mi Corazón Es Tuyo",
+                message: "Desde el primer día que te vi, supe que eras especial. Hoy te entrego mi corazón completamente."
+            },
+            {
+                title: "Amor Infinito",
+                message: "Mi amor por ti no tiene límites. Eres mi presente y mi futuro, mi todo."
+            },
+            {
+                title: "Contigo Siempre",
+                message: "Quiero estar a tu lado en cada momento, en las alegrías y en las tristezas. Juntos somos invencibles."
+            },
+            {
+                title: "Mi Razón de Ser",
+                message: "Tú le das sentido a mi vida. Cada latido de mi corazón es para ti."
+            },
+            {
+                title: "Amor Verdadero",
+                message: "El amor verdadero es lo que siento por ti. Puro, sincero e incondicional."
+            },
+            {
+                title: "Mi Tesoro",
+                message: "Eres el tesoro más valioso que he encontrado. Te cuidaré y amaré por siempre."
+            },
+            {
+                title: "Sueños Compartidos",
+                message: "Todos mis sueños incluyen tu sonrisa. Construyamos juntos nuestro futuro perfecto."
+            },
+            {
+                title: "Mi Inspiración",
+                message: "Tú me inspiras a ser mejor cada día. Gracias por creer en mí y en nosotros."
+            },
+            {
+                title: "Para Siempre Tuyo",
+                message: "Mi corazón, mi alma, mi vida... todo es tuyo. Te amo hoy y siempre."
+            }
+        ];
+
+        // State Management
+        let discoveredMessages = new Set();
+        let heartsClickedCount = 0;
+        let startTime = Date.now();
+        let timeInterval;
+
+        // DOM Elements
+        const heartsContainer = document.getElementById('heartsContainer');
+        const messageModal = document.getElementById('messageModal');
+        const letterModal = document.getElementById('letterModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const modalNumber = document.getElementById('modalNumber');
+        const modalTotal = document.getElementById('modalTotal');
+        const messagesCount = document.getElementById('messagesCount');
+        const totalMessages = document.getElementById('totalMessages');
+        const heartsClickedDisplay = document.getElementById('heartsClicked');
+        const timeSpentDisplay = document.getElementById('timeSpent');
+        const closeModalBtn = document.getElementById('closeModal');
+        const closeLetterModalBtn = document.getElementById('closeLetterModal');
+
+        // Initialize
+        function init() {
+            generateFloatingHearts();
+            loadProgress();
+            startTimer();
+            setupEventListeners();
+            updateStats();
+            setupEnvelopes();
+        }
+
+        // Setup Envelopes
+        function setupEnvelopes() {
+            const envelopes = document.querySelectorAll('.envelope-wrapper');
+            envelopes.forEach((envelope, index) => {
+                envelope.addEventListener('click', () => {
+                    const isOpen = envelope.classList.contains('open');
+                    
+                    if (!isOpen) {
+                        envelope.classList.add('open');
+                        setTimeout(() => {
+                            showLetter(index);
+                        }, 600);
+                    } else {
+                        envelope.classList.remove('open');
+                    }
+                });
+            });
+        }
+
+        // Show Letter
+        function showLetter(index) {
+            const letter = letters[index];
+            document.getElementById('letterTitle').textContent = letter.title;
+            document.getElementById('letterBody').textContent = letter.body;
+            letterModal.style.display = 'flex';
+            letterModal.classList.remove('hidden');
+        }
+
+        // Generate Floating Hearts - DISTRIBUIDOS POR TODA LA PANTALLA
+        function generateFloatingHearts() {
+            const heartCount = 15;
+            const colors = ['#D63384', '#FF69B4', '#FD7E14', '#DC3545', '#FF1493'];
+            
+            // Distribución más uniforme por toda la pantalla
+            const positions = [
+                // Arriba
+                { left: 5, top: 8 },
+                { left: 25, top: 12 },
+                { left: 50, top: 10 },
+                { left: 75, top: 15 },
+                { left: 95, top: 11 },
+                // Medio-Arriba
+                { left: 15, top: 28 },
+                { left: 85, top: 30 },
+                { left: 40, top: 35 },
+                // Medio
+                { left: 10, top: 50 },
+                { left: 65, top: 52 },
+                { left: 90, top: 55 },
+                // Medio-Abajo
+                { left: 20, top: 70 },
+                { left: 55, top: 72 },
+                // Abajo
+                { left: 35, top: 85 },
+                { left: 80, top: 88 }
+            ];
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('button');
+                heart.className = 'heart-float';
+                heart.setAttribute('aria-label', `Corazón ${i + 1} - Toca para descubrir mensaje`);
+                heart.setAttribute('data-message-index', i);
+                heart.style.color = colors[i % colors.length];
+                
+                const pos = positions[i];
+                heart.style.left = `${pos.left}%`;
+                heart.style.top = `${pos.top}%`;
+                heart.style.animationDelay = `${Math.random() * 3}s`;
+                
+                // Tamaños variados
+                const size = 45 + Math.random() * 25;
+                
+                // Heart SVG
+                heart.innerHTML = `
+                    <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                `;
+                
+                // Click event
+                heart.addEventListener('click', () => handleHeartClick(i));
+                
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        // Handle Heart Click
+        function handleHeartClick(index) {
+            const message = valentineMessages[index];
+            
+            heartsClickedCount++;
+            discoveredMessages.add(index);
+            
+            modalTitle.textContent = message.title;
+            modalMessage.textContent = message.message;
+            modalNumber.textContent = index + 1;
+            modalTotal.textContent = valentineMessages.length;
+            
+            messageModal.style.display = 'flex';
+            messageModal.classList.remove('hidden');
+            
+            updateStats();
+            saveProgress();
+            
+            const heartElement = document.querySelector(`[data-message-index="${index}"]`);
+            if (heartElement) {
+                heartElement.style.opacity = '0.4';
+            }
+        }
+
+        // Update Statistics
+        function updateStats() {
+            messagesCount.textContent = discoveredMessages.size;
+            totalMessages.textContent = valentineMessages.length;
+            heartsClickedDisplay.textContent = heartsClickedCount;
+        }
+
+        // Timer Function
+        function startTimer() {
+            timeInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                const minutes = Math.floor(elapsed / 60);
+                const seconds = elapsed % 60;
+                timeSpentDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // Save Progress
+        function saveProgress() {
+            const progress = {
+                discoveredMessages: Array.from(discoveredMessages),
+                heartsClicked: heartsClickedCount,
+                startTime: startTime
+            };
+            try {
+                localStorage.setItem('valentineProgress', JSON.stringify(progress));
+            } catch (e) {
+                console.log('Progress not saved');
+            }
+        }
+
+        // Load Progress
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem('valentineProgress');
+                if (saved) {
+                    const progress = JSON.parse(saved);
+                    discoveredMessages = new Set(progress.discoveredMessages);
+                    heartsClickedCount = progress.heartsClicked || 0;
+                    startTime = progress.startTime || Date.now();
+                    
+                    progress.discoveredMessages.forEach(index => {
+                        const heartElement = document.querySelector(`[data-message-index="${index}"]`);
+                        if (heartElement) {
+                            heartElement.style.opacity = '0.4';
+                        }
+                    });
+                }
+            } catch (e) {
+                console.log('Progress not loaded');
+            }
+        }
+
+        // Setup Event Listeners
+        function setupEventListeners() {
+            closeModalBtn.addEventListener('click', () => {
+                messageModal.style.display = 'none';
+                messageModal.classList.add('hidden');
+            });
+            
+            closeLetterModalBtn.addEventListener('click', () => {
+                letterModal.style.display = 'none';
+                letterModal.classList.add('hidden');
+                const openEnvelope = document.querySelector('.envelope-wrapper.open');
+                if (openEnvelope) {
+                    openEnvelope.classList.remove('open');
+                }
+            });
+            
+            messageModal.addEventListener('click', (e) => {
+                if (e.target === messageModal) {
+                    messageModal.style.display = 'none';
+                    messageModal.classList.add('hidden');
+                }
+            });
+            
+            letterModal.addEventListener('click', (e) => {
+                if (e.target === letterModal) {
+                    letterModal.style.display = 'none';
+                    letterModal.classList.add('hidden');
+                    const openEnvelope = document.querySelector('.envelope-wrapper.open');
+                    if (openEnvelope) {
+                        openEnvelope.classList.remove('open');
+                    }
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if (messageModal.style.display === 'flex') {
+                        messageModal.style.display = 'none';
+                        messageModal.classList.add('hidden');
+                    }
+                    if (letterModal.style.display === 'flex') {
+                        letterModal.style.display = 'none';
+                        letterModal.classList.add('hidden');
+                        const openEnvelope = document.querySelector('.envelope-wrapper.open');
+                        if (openEnvelope) {
+                            openEnvelope.classList.remove('open');
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', init);
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', () => {
+            clearInterval(timeInterval);
+            saveProgress();
+        });
+    </script>
+</body>
+</html>

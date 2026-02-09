@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>ValentineMemories</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== MENU ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background: white;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.logo span {
+  display: block;
+  font-size: 13px;
+  color: #999;
+  font-weight: normal;
+}
+
+.menu a {
+  margin-left: 35px;
+  text-decoration: none;
+  color: #e7068afa;
+  font-weight: 500;
+  position: relative;
+}
+
+.menu a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background: #e91e63;
+  border-radius: 2px;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(90deg, #D63384, #FD7E14);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+}
+
+header h1 {
+  font-size: 48px;
+  font-family: Georgia, serif;
+}
+
+header h2 {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+header p {
+  margin-top: 15px;
+}
+
+/* ===== GALERÍA ===== */
+.gallery {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== VER MÁS ===== */
+.ver-mas {
+  display: block;
+  margin: 20px auto 50px;
+  padding: 12px 30px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 15px;
+}
+
+/* CONTROLES */
+.close, .prev, .next {
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.close {
+  top: 20px;
+  right: 30px;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<nav>
+  <div class="logo">❤️ ValentineMemories <span>Nuestra Historia</span></div>
+ <div class="menu">
+    <a href="animated_heart_dashboard.html" >Inicio</a>
+    <a href="friendship_timeline.html">Línea de Tiempo</a>
+    <a href="memory_gallery.html" class="active">Recuerdos</a>
+    <a href="games_hub.html">Juegos</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <h1>Nuestros Recuerdos Especiales</h1>
+  <h2>Momentos que guardamos en el corazón</h2>
+  <p>Cada fotografía cuenta una historia</p>
+</header>
+
+<!-- GALERÍA -->
+<section class="gallery" id="gallery">
+  <!-- Primeras 20 -->
+  <img src="1.jpg" onclick="openModal(0)">
+  <img src="2.jpg" onclick="openModal(1)">
+  <img src="3.jpg" onclick="openModal(2)">
+  <img src="4.jpg" onclick="openModal(3)">
+  <img src="5.jpg" onclick="openModal(4)">
+  <img src="6.jpg" onclick="openModal(5)">
+  <img src="7.jpg" onclick="openModal(6)">
+  <img src="8.jpg" onclick="openModal(7)">
+  <img src="9.jpg" onclick="openModal(8)">
+  <img src="10.jpg" onclick="openModal(9)">
+  <img src="11.jpg" onclick="openModal(10)">
+  <img src="12.jpg" onclick="openModal(11)">
+  <img src="13.jpg" onclick="openModal(12)">
+  <img src="17.jpg" onclick="openModal(13)">
+  <img src="17 (2).jpg" onclick="openModal(14)">
+  <img src="17 (3).jpg" onclick="openModal(15)">
+  <img src="aaa.jpg"openModal(16)">
+  <img src="af.jpg" onclick="openModal(17)">
+  <img src="b.jpg" onclick="openModal(18)">
+  <img src="A.jpg" onclick="openModal(19)">
+
+  <!-- Otras 30 -->
+  <img class="hidden" src="c.jpg">
+  <img class="hidden" src="d.jpg">
+  <img class="hidden" src="e.jpg">
+  <img class="hidden" src="f.jpg">
+  <img class="hidden" src="g.jpg">
+  <img class="hidden" src="h.jpg">
+  <img class="hidden" src="i.jpg">
+  <img class="hidden" src="j.jpg">
+  <img class="hidden" src="k (2).jpg">
+  <img class="hidden" src="k.jpg">
+  <img class="hidden" src="kw.jpg">
+  <img class="hidden" src="wk.jpg">
+  <img class="hidden" src="IMG-20260127-WA0145.jpg">
+  <img class="hidden" src="IMG-20260127-WA0203.jpg">
+  <img class="hidden" src="IMG-20260127-WA0210.jpg">
+  <img class="hidden" src="IMG-20260127-WA0211.jpg">
+  <img class="hidden" src="IMG-20260127-WA0235.jpg">
+  <img class="hidden" src="re.jpg">
+  <img class="hidden" src="rf.jpg">
+  <img class="hidden" src="rfwd.jpg">
+  <img class="hidden" src="oo.jpg">
+  <img class="hidden" src="p.jpg">
+  <img class="hidden" src="q.jpg">
+  <img class="hidden" src="z.jpg">
+  <img class="hidden" src="s.jpg">
+  <img class="hidden" src="ss.jpg">
+  <img class="hidden" src="n.jpg">
+  <img class="hidden" src="m.jpg">
+  <img class="hidden" src="18.jpg">
+  <img class="hidden" src="19.jpg">
+  <img class="hidden" src="20.jpg">
+  <img class="hidden" src="32.jpg">
+  <img class="hidden" src="34.jpg">
+  <img class="hidden" src="35.jpg">
+  <img class="hidden" src="111.jpg">
+  <img class="hidden" src="113.jpg">
+  <img class="hidden" src="232.jpg">
+  <img class="hidden" src="2342.jpg">
+  <img class="hidden" src="mey.jpg">
+  <img class="hidden" src="linia.jpg">
+  <img class="hidden" src="IMG-20260127-WA0235.jpg">
+  <img class="hidden" src="l.jpg">
+  <img class="hidden" src="u.jpg">
+  <img class="hidden" src="uuu.jpg">
+</section>
+
+<button class="ver-mas" onclick="verMas()">Ver más</button>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <span class="close" onclick="closeModal()">×</span>
+  <span class="prev" onclick="changeImage(-1)">❮</span>
+  <img id="modalImg">
+  <span class="next" onclick="changeImage(1)">❯</span>
+</div>
+
+<script>
+const images = document.querySelectorAll(".gallery img");
+let currentIndex = 0;
+
+function openModal(index) {
+  currentIndex = index;
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalImg").src = images[currentIndex].src;
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+function changeImage(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  if (currentIndex >= images.length) currentIndex = 0;
+  document.getElementById("modalImg").src = images[currentIndex].src;
+}
+
+function verMas() {
+  document.querySelectorAll(".hidden").forEach(img => img.classList.remove("hidden"));
+  document.querySelector(".ver-mas").style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal de entrada romántico para ValentineMemories - Accede con tu fecha especial">
+    <title>Entrada Romántica - ValentineMemories</title>
+    <link rel="stylesheet" href="main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fvalentinem6121back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.15"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-gradient-romantic min-h-screen flex items-center justify-center p-4 overflow-hidden relative">
+    
+    <!-- Animated Background Hearts -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div class="heart-float absolute top-10 left-10 text-primary-200 opacity-30">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute top-32 right-20 text-secondary-200 opacity-25" style="animation-delay: 1s;">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute bottom-20 left-1/4 text-accent-200 opacity-20" style="animation-delay: 2s;">
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute top-1/2 right-10 text-primary-300 opacity-25" style="animation-delay: 0.5s;">
+            <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart-float absolute bottom-32 right-1/3 text-secondary-300 opacity-20" style="animation-delay: 1.5s;">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Main Login Container -->
+    <main class="relative z-10 w-full max-w-md">
+        <!-- Login Card -->
+        <div class="card-elevated backdrop-blur-romantic">
+            <!-- Header Section -->
+            <header class="text-center mb-8">
+                <!-- Logo/Brand -->
+                <div class="mb-6 flex justify-center">
+                    <div class="relative">
+                        <svg width="80" height="80" viewBox="0 0 100 100" class="heart-pulse">
+                            <defs>
+                                <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#D63384;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#DC3545;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FD7E14;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M50 85 L20 55 C10 45 10 30 20 20 C30 10 45 10 50 20 C55 10 70 10 80 20 C90 30 90 45 80 55 Z" 
+                                  fill="url(#heartGradient)" 
+                                  stroke="none"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <h1 class="font-headline text-3xl md:text-4xl text-primary-700 mb-3">
+                    ValentineMemories
+                </h1>
+                <p class="font-accent text-xl text-secondary-600 mb-2">
+                    Un Lugar Especial Para Nosotros
+                </p>
+                <p class="text-text-secondary text-sm">
+                    Ingresa nuestra fecha especial para continuar
+                </p>
+            </header>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="space-y-6" novalidate>
+                <!-- Date Input Group -->
+                <div class="space-y-2">
+                    <label for="anniversaryDate" class="block text-sm font-cta font-medium text-text-primary">
+                        Fecha de Aniversario
+                    </label>
+                    <div class="relative">
+                        <input 
+                            type="date" 
+                            id="anniversaryDate" 
+                            name="anniversaryDate"
+                            class="input w-full pl-12 pr-4 py-3 text-base"
+                            placeholder="DD/MM/AAAA"
+                            required
+                            aria-required="true"
+                            aria-describedby="dateHint dateError"
+                            aria-invalid="false"
+                        >
+                        <div class="absolute left-4 top-1/2 -translate-y-1/2 text-primary-400 pointer-events-none">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Hint Text -->
+                    <p id="dateHint" class="text-xs text-text-tertiary flex items-center gap-1">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-accent-500">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                        Pista: El día que todo comenzó
+                    </p>
+                    <!-- Error Message (Hidden by default) -->
+                    <p id="dateError" class="text-xs text-error hidden" role="alert">
+                        Por favor, ingresa una fecha válida
+                    </p>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                    type="submit" 
+                    id="submitBtn"
+                    class="btn-primary w-full text-base font-semibold shadow-heart hover:shadow-elevated transition-all duration-300 group"
+                    aria-label="Ingresar al portal romántico"
+                >
+                    <span class="flex items-center justify-center gap-2">
+                        <span>Entrar al Portal</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="group-hover:translate-x-1 transition-transform duration-300">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </span>
+                </button>
+
+                <!-- Loading State (Hidden by default) -->
+                <div id="loadingState" class="hidden text-center py-4">
+                    <div class="inline-flex items-center gap-3 text-primary-600">
+                        <svg class="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span class="text-sm font-medium">Verificando...</span>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Additional Hints Section -->
+            <div id="additionalHints" class="mt-6 p-4 bg-primary-50 rounded-lg border border-primary-200 hidden">
+                <div class="flex items-start gap-3">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-primary-600 flex-shrink-0 mt-0.5">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                    </svg>
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-primary-800 mb-1">¿Necesitas más pistas?</p>
+                        <p class="text-xs text-primary-700">
+                            Piensa en el momento más especial que compartimos juntos... 💕
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Message -->
+            <footer class="mt-8 text-center">
+                <p class="text-xs text-text-tertiary">
+                    Creado con 
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="inline text-secondary-500 animate-pulse-heart">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    para alguien especial
+                </p>
+            </footer>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center mt-6">
+            <p class="text-xs text-text-tertiary">
+                © 2026 ValentineMemories. Todos los derechos reservados.
+            </p>
+        </div>
+    </main>
+
+    <!-- JavaScript for Form Handling -->
+    <script>
+        // Form elements
+        const loginForm = document.getElementById('loginForm');
+        const dateInput = document.getElementById('anniversaryDate');
+        const dateError = document.getElementById('dateError');
+        const submitBtn = document.getElementById('submitBtn');
+        const loadingState = document.getElementById('loadingState');
+        const additionalHints = document.getElementById('additionalHints');
+
+        // Attempt counter for progressive hints
+        let attemptCount = 0;
+
+        // Form submission handler
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset error state
+            dateError.classList.add('hidden');
+            dateInput.classList.remove('input-error');
+            dateInput.setAttribute('aria-invalid', 'false');
+
+            // Get input value
+            const dateValue = dateInput.value;
+
+            // Validate input
+            if (!dateValue) {
+                showError('Por favor, ingresa una fecha');
+                return;
+            }
+
+            // Show loading state
+            submitBtn.classList.add('hidden');
+            loadingState.classList.remove('hidden');
+
+            // Simulate authentication (replace with actual validation logic)
+            setTimeout(() => {
+                // Mock validation - replace with actual anniversary date check
+                const isValid = validateDate(dateValue);
+
+                if (isValid) {
+                    // Success - redirect to dashboard
+                    window.location.href = 'animated_heart_dashboard.html';
+                } else {
+                    // Failed attempt
+                    attemptCount++;
+                    
+                    // Hide loading state
+                    loadingState.classList.add('hidden');
+                    submitBtn.classList.remove('hidden');
+
+                    // Show error
+                    showError('Fecha incorrecta. Intenta de nuevo 💔');
+
+                    // Show additional hints after 2 failed attempts
+                    if (attemptCount >= 2) {
+                        additionalHints.classList.remove('hidden');
+                    }
+                }
+            }, 1500);
+        });
+
+        // Validation function (mock - replace with actual logic)
+        function validateDate(dateValue) {
+            // Example: Check if date matches a specific anniversary
+            // Replace this with actual validation logic
+            const inputDate = new Date(dateValue);
+            const anniversaryDate = new Date('2026-04-17'); // Example anniversary date
+            
+            return inputDate.getTime() === anniversaryDate.getTime();
+        }
+
+        // Error display function
+        function showError(message) {
+            dateError.textContent = message;
+            dateError.classList.remove('hidden');
+            dateInput.classList.add('input-error');
+            dateInput.setAttribute('aria-invalid', 'true');
+            
+            // Add shake animation
+            dateInput.classList.add('animate-shake');
+            setTimeout(() => {
+                dateInput.classList.remove('animate-shake');
+            }, 500);
+        }
+
+        // Input focus handler - clear error on focus
+        dateInput.addEventListener('focus', function() {
+            dateError.classList.add('hidden');
+            dateInput.classList.remove('input-error');
+            dateInput.setAttribute('aria-invalid', 'false');
+        });
+
+        // Add shake animation to Tailwind
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+            .animate-shake {
+                animation: shake 0.5s ease-in-out;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Set max date to today
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('max', today);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

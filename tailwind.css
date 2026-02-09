@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors - Deep romantic pink */
+    --color-primary: #D63384; /* pink-600 */
+    --color-primary-50: #FCE4EC; /* pink-50 */
+    --color-primary-100: #F8BBD0; /* pink-100 */
+    --color-primary-200: #F48FB1; /* pink-200 */
+    --color-primary-300: #F06292; /* pink-300 */
+    --color-primary-400: #EC407A; /* pink-400 */
+    --color-primary-500: #E91E63; /* pink-500 */
+    --color-primary-600: #D63384; /* pink-600 */
+    --color-primary-700: #C2185B; /* pink-700 */
+    --color-primary-800: #AD1457; /* pink-800 */
+    --color-primary-900: #880E4F; /* pink-900 */
+
+    /* Secondary Colors - Rich Valentine red */
+    --color-secondary: #DC3545; /* red-600 */
+    --color-secondary-50: #FFEBEE; /* red-50 */
+    --color-secondary-100: #FFCDD2; /* red-100 */
+    --color-secondary-200: #EF9A9A; /* red-200 */
+    --color-secondary-300: #E57373; /* red-300 */
+    --color-secondary-400: #EF5350; /* red-400 */
+    --color-secondary-500: #F44336; /* red-500 */
+    --color-secondary-600: #DC3545; /* red-600 */
+    --color-secondary-700: #D32F2F; /* red-700 */
+    --color-secondary-800: #C62828; /* red-800 */
+    --color-secondary-900: #B71C1C; /* red-900 */
+
+    /* Accent Colors - Warm coral */
+    --color-accent: #FD7E14; /* orange-500 */
+    --color-accent-50: #FFF3E0; /* orange-50 */
+    --color-accent-100: #FFE0B2; /* orange-100 */
+    --color-accent-200: #FFCC80; /* orange-200 */
+    --color-accent-300: #FFB74D; /* orange-300 */
+    --color-accent-400: #FFA726; /* orange-400 */
+    --color-accent-500: #FD7E14; /* orange-500 */
+    --color-accent-600: #FB8C00; /* orange-600 */
+    --color-accent-700: #F57C00; /* orange-700 */
+    --color-accent-800: #EF6C00; /* orange-800 */
+    --color-accent-900: #E65100; /* orange-900 */
+
+    /* Background Colors */
+    --color-background: #FFF8F9; /* pink-50 custom */
+    --color-surface: #F8F9FA; /* gray-50 */
+    --color-surface-hover: #F1F3F5; /* gray-100 */
+
+    /* Text Colors */
+    --color-text-primary: #212529; /* gray-900 */
+    --color-text-secondary: #6C757D; /* gray-600 */
+    --color-text-tertiary: #ADB5BD; /* gray-400 */
+
+    /* Status Colors */
+    --color-success: #198754; /* green-600 */
+    --color-success-light: #D1E7DD; /* green-100 */
+    --color-warning: #FFC107; /* amber-500 */
+    --color-warning-light: #FFF3CD; /* amber-100 */
+    --color-error: #DC3545; /* red-600 */
+    --color-error-light: #F8D7DA; /* red-100 */
+
+    /* Shadows */
+    --shadow-heart: 0 4px 12px rgba(214, 51, 132, 0.15);
+    --shadow-card: 0 2px 8px rgba(214, 51, 132, 0.08);
+    --shadow-elevated: 0 8px 24px rgba(214, 51, 132, 0.12);
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-fast: 300ms ease-out;
+    --transition-base: 400ms ease-in-out;
+    --transition-slow: 600ms ease-in-out;
+  }
+
+  body {
+    @apply font-body text-text-primary bg-background antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  button {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer components {
+  /* Heart Animation Classes */
+  .heart-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .heart-scale {
+    transition: transform var(--transition-fast);
+  }
+
+  .heart-scale:hover {
+    transform: scale(1.15);
+  }
+
+  .heart-pulse {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  }
+
+  /* Message Reveal Animation */
+  .message-reveal {
+    animation: reveal var(--transition-base) ease-in-out forwards;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-surface rounded-lg p-6 shadow-card;
+  }
+
+  .card-elevated {
+    @apply bg-surface rounded-lg p-6 shadow-elevated;
+  }
+
+  /* Button Styles */
+  .btn {
+    @apply font-cta font-medium px-6 py-3 rounded-lg transition-all duration-300 inline-flex items-center justify-center;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-700 active:bg-primary-800 shadow-heart;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary text-white hover:bg-secondary-700 active:bg-secondary-800;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent text-white hover:bg-accent-600 active:bg-accent-700;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300;
+  }
+
+  .input-error {
+    @apply border-error focus:border-error focus:ring-error/20;
+  }
+
+  /* Gallery Styles */
+  .gallery-frame {
+    @apply border border-primary-200 rounded-md overflow-hidden;
+  }
+
+  /* Text Styles */
+  .text-accent-script {
+    @apply font-accent text-primary;
+  }
+
+  /* Section Spacing */
+  .section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .section-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  /* Custom Shadows */
+  .shadow-heart {
+    box-shadow: var(--shadow-heart);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Transition Utilities */
+  .transition-fast {
+    transition-duration: var(--transition-fast);
+  }
+
+  .transition-base {
+    transition-duration: var(--transition-base);
+  }
+
+  .transition-slow {
+    transition-duration: var(--transition-slow);
+  }
+
+  /* Text Gradient */
+  .text-gradient-romantic {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Background Gradients */
+  .bg-gradient-romantic {
+    @apply bg-gradient-to-br from-primary-50 via-background to-secondary-50;
+  }
+
+  .bg-gradient-romantic-dark {
+    @apply bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600;
+  }
+
+  /* Blur Effects */
+  .backdrop-blur-romantic {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 248, 249, 0.8);
+  }
+}
